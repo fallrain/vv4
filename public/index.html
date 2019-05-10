@@ -1,17 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>vv4</title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but vv4 doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+<html>
+
+<head>
+  <script type="text/javascript">
+      var _paq = _paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+          var u="//sa.haier.net/piwik/";
+          _paq.push(['setTrackerUrl', u+'piwik.php']);
+          _paq.push(['setSiteId', '32']);
+          var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+          g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+      //第二次增加
+      !function(e,t,n,g,i){e[i]=e[i]||function(){(e[i].q=e[i].q||[]).push(arguments)},n=t.createElement("script"),tag=t.getElementsByTagName("script")[0],n.async=1,n.src=('https:'==document.location.protocol?'https://':'http://')+g,tag.parentNode.insertBefore(n,tag)}(window,document,"script","assets.growingio.com/op/2.0/gio.js","gio");
+      gio('init', '8e068a954e67da05',
+          {'setImp':'false',
+              'setTrackerHost':'vds.haier.net:443',
+              'setTrackerScheme':'https',
+              'setOrigin': 'https://udg.haier.net'
+          });
+      //put your custom page code here
+      gio('send');
+  </script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>海尔会员中心</title>
+  <link rel="shortcut icon" href="<%= BASE_URL %>css/favicon.ico" type="image/x-icon" />
+  <!-- <link rel="stylesheet" href="<%= BASE_URL %>css/bootstrap.min.css" /> -->
+  <!-- <link rel="stylesheet" href="<%= BASE_URL %>css/base.css" /> -->
+  <!-- <link rel="stylesheet" href="<%= BASE_URL %>css/components.css" /> -->
+  <!-- <link rel="stylesheet" href="<%= BASE_URL %>css/iconfont.css" /> -->
+  <!-- <link rel="stylesheet" href="<%= BASE_URL %>css/animate.css" /> -->
+  <style type="text/css">
+    .dom-loading{position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #363538; display: block; z-index: 10; }
+    .dom-loading .lading-logo{position: absolute; top: 50%; margin-top: -90px; left: 50%; margin-left: -50px; font-size: 40px; font-weight: bold; color: #fff; display: inline-block;}
+    .dom-loading p{position: absolute; top: 50%; margin-top: -30px; left: 50%; margin-left: -242px; font-size: 18px; font-weight: bold; color: #fff; display: none;}
+  </style>
+
+</head>
+
+<body class="theme-default">
+  <div id="dom-loading" class="dom-loading">
+    <p class="lading-logo">Haier</p>
+    <p>为保证您的使用体验，请使用 Chrome 或 Firefox 浏览器打开</p>
+  </div>
+  <div id="app" style="display: none;"> </div>
+  <!-- built files will be auto injected -->
+  <script src="<%= BASE_URL %>js/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript">
+    function myBrowser(){
+      var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+      var isOpera = userAgent.indexOf("Opera") > -1;
+
+      if (isOpera) {
+          return "Opera"
+      } //判断是否Opera浏览器
+
+      if (userAgent.indexOf("Firefox") > -1) {
+          return "FF";
+      } //判断是否Firefox浏览器
+
+      if (userAgent.indexOf("Ch ,rome") > -1){
+        return "Chrome";
+      }
+
+      if (userAgent.indexOf("Safari") > -1) {
+        return "Safari";
+      } //判断是否Safari浏览器
+
+      if (userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1 && !isOpera) {
+        return "IE";
+      } //判断是否IE浏览器
+    }
+
+    var mb = myBrowser();
+    if (mb != 'Chrome' && mb != 'FF' && mb != 'Safari') {
+      $('.dom-loading p').show()
+    }
+  </script>
+  <script src="<%= BASE_URL %>js/jquery.ui.widget.js"></script>
+  <script src="<%= BASE_URL %>js/jquery.cookie.js"></script>
+
+  <!-- <script src="<%= BASE_URL %>js/jquery-upload.js"></script> -->
+  <!-- <script src="<%= BASE_URL %>js/es6-promise.auto.min.js"></script> -->
+  <script src="<%= BASE_URL %>js/echarts.min.js"></script>
+  <script src="<%= BASE_URL %>components/ueditor/third-party/zeroclipboard/ZeroClipboard.js"></script>
+  <script src="<%= BASE_URL %>components/ueditor/ueditor.config.js"></script>
+  <!-- <script src="<%= BASE_URL %>components/ueditor/ueditor.all.eshop.js"></script>   -->
+  <script src="<%= BASE_URL %>components/ueditor/ueditor.all.js"></script>
+
+</body>
+
 </html>

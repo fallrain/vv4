@@ -1,0 +1,841 @@
+/*递归树*/
+
+.theme-default .g-tree {
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.theme-default .g-tree div,
+.theme-default .g-tree span {
+  display: block;
+  color: #666;
+}
+
+.theme-default .g-tree span {
+  padding: 7px 0;
+}
+
+.theme-default .g-tree .isselect {
+  color: #2d97de;
+}
+
+.theme-default .g-tree .isselect {
+  color: #2d97de;
+}
+
+.theme-default .g-tree .ishasPerm {
+  background: #2d97de;
+  color: #fff;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.theme-default .g-tree a {
+  color: #666;
+  width: 80%;
+  display: inline-table;
+}
+
+.theme-default .g-tree .isselect a {
+  color: #2d97de;
+}
+
+.theme-default .g-tree span:hover a {
+  color: #2d97de
+}
+
+.theme-default .g-tree label {
+  color: #666;
+  cursor: pointer
+}
+
+.theme-default .g-tree .isselect label {
+  color: #2d97de;
+}
+
+.theme-default .g-tree span:hover label {
+  color: #2d97de
+}
+
+.theme-default .g-tree input[type=radio] {
+  position: relative;
+  top: 2px;
+  cursor: pointer;
+}
+
+.theme-default .g-tree i {
+  vertical-align: middle;
+  font-size: 18px;
+  position: relative;
+  bottom: 1px;
+}
+
+.theme-default .g-tree .treeOne {
+  font-size: 13px;
+  background: #dde1e8;
+  line-height: 20px;
+}
+
+.theme-default .g-tree .treeTwo {
+  background: #edeff3;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.theme-default .g-tree .treeThree {
+  background: #f7f8fa;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.theme-default .g-tree span.treeThree:hover {
+  background: #edeff3
+}
+
+.theme-default .g-tree span.allHover:hover {
+  background: #edeff3
+}
+
+.theme-default .g-tree .ishasPerm:hover {
+  color: #fff;
+}
+
+.theme-default .g-tree span.allHover:hover .ishasPerm {
+  color: #fff;
+}
+
+.theme-default .g-tree span.isselect .ishasPerm {
+  color: #fff;
+  background: #536478
+}
+
+.theme-default .g-tree .mgl18 {
+  margin-left: 18px;
+}
+
+.theme-default .g-tree .pdl18 {
+  padding-left: 54px!important;
+}
+
+
+/*递归树*/
+
+
+/*多选*/
+
+.theme-default .g-checkbox {
+  width: 14px;
+  height: 14px;
+}
+
+.theme-default .g-checkbox-value {
+  position: relative;
+  bottom: 2px;
+  cursor: pointer;
+  color: #666;
+}
+
+.theme-default .g-checkbox-input {
+  width: 14px;
+  height: 14px;
+  border: 1px solid #e1e6eb;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  background: #fff;
+}
+
+.theme-default .g-checkbox-input.isChecked .g-checkbox-outer::before {
+  font-family: "iconfont" !important;
+  font-size: 12px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e610";
+  color: #2d97de;
+  position: absolute;
+  right: -1px;
+}
+
+.theme-default .g-checkbox-input .g-checkbox-inner {
+  /*opacity: 0;
+  outline: none;
+  position: absolute;
+  left: 210px;
+  margin: 0;
+  left: -999px;
+  */
+  margin-left: 100px;
+}
+
+
+/*多选*/
+
+
+/*按钮*/
+
+.theme-default .g-button {
+  min-width: 78px;
+  height: 31px;
+  padding: 0 10px;
+  display: inline-block;
+  background: #e6e6e6;
+  color: #666;
+  text-align: center!important;
+  line-height: 31px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.theme-default .g-button:hover {
+  background: #536378;
+  color: #fff!important;
+}
+
+.theme-default .g-button-radius {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+.theme-default .g-button.g-button-radius:hover {
+  background: #2d97de;
+  color: #fff!important;
+}
+
+.theme-default .g-button.g-button-blue {
+  background: #2d97de;
+  color: #fff!important;
+}
+
+.theme-default .g-button.g-button-blue:hover {
+  background: #5d9efc;
+  color: #fff!important;
+}
+
+.theme-default .g-button.g-button-gray {
+  background: #cdced0;
+  color: #fff!important;
+}
+
+.theme-default .g-button.g-button-gray-radius {
+  background: #cdced0;
+  color: #fff!important;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+.theme-default .g-button.g-button-blue-radius {
+  background: #2c97dd;
+  color: #fff!important;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+.theme-default .g-button.g-button-blue-radius:hover {
+  background: #5d9efc;
+  color: #fff!important;
+}
+
+.theme-default .g-button.btn-select {
+  background: #2c97dd;
+  color: #fff!important;
+}
+
+
+/*按钮*/
+
+
+/*table*/
+
+.theme-default .g-table {
+  width: 100%;
+  border: 1px solid #e1e6ec;
+  /*table-layout: fixed; huanyuan*/
+  word-wrap: break-word;
+}
+
+.theme-default .g-table thead {
+  background: #f5f6fa;
+  border-bottom: 1px solid #e1e6ec;
+}
+
+.theme-default .g-table th {
+  height: 32px;
+  color: #999;
+  text-align: center;
+  font-size: 12px;
+  padding: 0 15px;
+}
+
+.theme-default .g-table td {
+  text-align: center;
+  /*height: 40px;*/
+  border-bottom: 1px solid #e1e6ec;
+  font-size: 12px;
+  color: #303030;
+  padding: 5px 5px;
+  max-width: 100px;
+  /*huanyuan*/
+}
+
+.theme-default .g-table th {
+  cursor: pointer;
+}
+
+.theme-default .g-table tr:hover {
+  background: #f9fafb;
+}
+
+.theme-default .g-table td a {
+  color: #2d97de;
+  cursor: pointer;
+}
+
+.theme-default .g-table td a:hover {
+  color: #1e82c5;
+}
+
+.theme-default .g-table input {
+  /*cursor: pointer*/
+}
+
+.theme-default .g-table .arrow {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 0;
+  margin-left: 5px;
+  opacity: 0.66;
+}
+
+.theme-default .g-table .arrow.asc {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid #999;
+}
+
+.theme-default .g-table .arrow.dsc {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #999;
+}
+
+.theme-default .g-table .w50 {
+  width: 50px;
+}
+
+.theme-default .g-table .w80 {
+  width: 80px;
+}
+
+.theme-default .g-table .w150 {
+  width: 150px;
+}
+
+.ob-table th:nth-child(3) {
+  width: 150px!important
+}
+
+.ob-table th:nth-child(4) {
+  width: 100px!important
+}
+
+.ob-table th:nth-child(5) {
+  width: 150px!important
+}
+
+.ob-table th:nth-child(6) {
+  width: 220px!important
+}
+
+.ob-table th:nth-child(7) {
+  width: 150px!important
+}
+
+.ob-table th:nth-child(8) {
+  width: 120px!important
+}
+
+.ob-table th:nth-child(9) {
+  width: 80px!important
+}
+
+.ob-table th:nth-child(10) {
+  width: 100px!important
+}
+
+.ob-table th:nth-child(11) {
+  width: 120px!important
+}
+
+.ob-table th:nth-child(12) {
+  width: 80px!important
+}
+
+.pb-table th {
+  width: 100px;
+}
+
+
+/*table*/
+
+
+/*分页*/
+
+.theme-default .g-table tfoot>td {
+  text-align: right;
+  height: 58px;
+}
+
+.theme-default .g-pager {
+  margin-right: 15px;
+  line-height: 0;
+}
+
+.theme-default .g-pager-info {
+  display: inline-block;
+  position: relative;
+  bottom: 13px;
+  margin-right: 10px;
+}
+
+.theme-default .g-pager-main {
+  display: inline-block
+}
+
+.theme-default .g-pager-main span {
+  width: 35px;
+  height: 35px;
+  border-top: 1px solid#e3e3e3;
+  border-bottom: 1px solid#e3e3e3;
+  border-left: 1px solid#e3e3e3;
+  display: block;
+  float: left;
+  cursor: pointer;
+  text-align: center;
+  line-height: 35px;
+  color: #e3e3e3;
+}
+
+.theme-default .g-pager-main span:last-child {
+  border-right: 1px solid#e3e3e3;
+}
+
+.theme-default .g-pager-main span:hover {
+  background: #2d97de;
+  border-top: 1px solid #2d97de;
+  border-bottom: 1px solid #2d97de;
+  color: #fff;
+}
+
+.theme-default .theme-default .g-pager-main .icon {
+  font-size: 12px;
+}
+
+.theme-default .g-pager-main .isSelect {
+  background: #2d97de;
+  border-top: 1px solid #2d97de;
+  border-bottom: 1px solid #2d97de;
+  color: #fff;
+}
+
+
+/*分页*/
+
+
+/*dislog*/
+
+.theme-default .g-diglog-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(150, 150, 150, 0.5);
+  /*display: table;*/
+  overflow-y: scroll;
+  /*transition: opacity .05s ease;*/
+  justify-content: center;
+  align-items: center;
+  display: -webkit-flex;
+}
+
+.theme-default .g-diglog-wrapper {
+  /*display: table-cell;
+  vertical-align: middle;*/
+  position: relative;
+  /*bottom: 150px;*/
+}
+
+.theme-default .g-diglog-container {
+  width: 600px;
+  padding-bottom: 35px;
+  margin: 0px auto;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+  transition: all .3s ease;
+}
+
+.theme-default .g-diglog-container .icon {
+  font-size: 40px;
+  color: #2d97de
+}
+
+.theme-default .g-diglog-container .desc {
+  position: relative;
+  bottom: 8px;
+  margin-left: 2px;
+  font-size: 12px;
+  padding: 0 10px;
+  display: inline-table;
+  line-height: 20px;
+  color: #666
+}
+
+.theme-default .g-diglog-header {
+  height: 35px;
+  border-bottom: 1px solid #eee;
+}
+
+.theme-default .g-diglog-header h2 {
+  padding: 10px;
+  color: #303030;
+  text-align: left;
+  font-size: 14px;
+}
+
+.theme-default .g-diglog-header .closed {
+  font-size: 16px;
+  float: right;
+  font-weight: bold;
+  cursor: pointer
+}
+
+.theme-default .g-diglog-body {
+  /*margin: 20px 0;
+  padding: 0 40px;*/
+  /*text-align: center;*/
+}
+
+.theme-default .g-diglog-footer {
+  text-align: center;
+}
+
+.theme-default .g-diglog-default-button {
+  float: right;
+}
+
+.theme-default .g-diglog-enter {
+  opacity: 0;
+}
+
+.theme-default .g-diglog-leave-active {
+  opacity: 0;
+}
+
+.theme-default .g-diglog-enter-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.theme-default .g-diglog-container .col {
+  padding: 20px 5px 0;
+  width: 355px;
+  /*text-align:right*/
+}
+
+.theme-default .g-diglog-container .col span {
+  width: 70px;
+  text-align: right;
+  display: inline-block;
+  font-size: 12px;
+  color: #666;
+}
+
+.theme-default .g-diglog-container .col .radiobox {
+  display: inline-block;
+  width: 250px;
+  text-align: left;
+  font-size: 12px;
+  color: #666;
+}
+
+.theme-default .g-diglog-container .col .radiobox input {
+  margin: 0 5px;
+  position: relative;
+  top: 2px;
+}
+
+.theme-default .g-diglog-container .col p.error {
+  margin: 10px 0 0 70px;
+  text-align: left;
+  color: red;
+  font-size: 12px;
+}
+
+.theme-default .g-diglog-container .col b.star {
+  color: red;
+  margin-left: 2px;
+}
+
+.theme-default .g-diglog-container .col textarea {
+  width: 260px;
+  height: 100px;
+  vertical-align: middle;
+}
+
+.theme-default .g-diglog-container .digbox {
+  margin: 0 auto;
+  width: 400px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.theme-default .g-diglog-container .digbox img {
+  max-width: 100%;
+  /*min-width:20px;*/
+}
+
+.theme-default .menu-icon-poplayer {
+  width: 260px;
+  background: #fff;
+  margin-left: 74px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  position: absolute;
+  height: 100px;
+  padding: 5px;
+  color: #aaa;
+}
+
+.theme-default .menu-icon-poplayer b {
+  font-weight: normal;
+  color: #9e9e9e;
+  cursor: pointer;
+  font-size: 23px;
+  margin: 2px
+}
+
+.theme-default .menu-icon-poplayer b:hover {
+  color: #1e82c5
+}
+
+
+/*dislog*/
+
+
+/*input*/
+
+.theme-default .g-input {
+  width: 140px;
+  border: 1px solid #ccc;
+  padding: 7px 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: #fff;
+  height: 30px;
+  font-size: 12px;
+}
+
+.theme-default .g-input:focus {
+  border-color: #2d97de;
+  outline: 0;
+}
+
+
+/*input*/
+
+
+/*search*/
+
+.theme-default .search .search-input {
+  float: left;
+  position: relative;
+}
+
+.theme-default .search .search-input i {
+  position: absolute;
+  right: 5px;
+  top: 6px;
+  color: #9e9e9e;
+}
+
+.theme-default .search .g-button {
+  float: left
+}
+
+
+/*search*/
+
+
+/*select*/
+
+.theme-default .g-select {
+  width: 140px;
+  position: relative;
+  display: inline-block;
+  line-height: 15px;
+}
+
+.theme-default .g-select span.g-select_tit {
+  width: 100%!important;
+  border: 1px solid #ccc;
+  background: #fff;
+  height: 30px;
+  font-size: 12px;
+  display: inline-block;
+  padding: 6px 0 5px 10px;
+  color: #666;
+  cursor: pointer;
+  text-align: left!important;
+}
+
+.theme-default .g-select i {
+  float: right;
+}
+
+.theme-default .g-select .list {
+  width: 100%;
+  max-height: 140px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  margin-top: -1px;
+  position: absolute;
+  background: #fff;
+  z-index: 10;
+}
+
+.theme-default .g-select .list span.g-select_l {
+  display: inline-block;
+  width: 100%;
+  padding: 5px 0 5px 10px;
+  color: #666;
+  cursor: pointer;
+  font-size: 12px;
+  text-align: left;
+}
+
+.theme-default .g-select .list span.g-select_l:hover {
+  background: #eaedf1
+}
+
+.theme-default .g-select b {
+  font-size: 22px;
+  position: absolute;
+  right: 15px;
+  top: 9px;
+}
+
+.theme-default .g-select b:hover {
+  font-weight: bold;
+}
+
+
+/*select*/
+
+
+/*loading*/
+
+.loading {
+  position: absolute;
+  font-size: 12px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+}
+
+.loading .box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+.loading .icon {
+  width: 45px;
+  height: 39px;
+  /*background: url('../images/loading.gif') no-repeat;*/
+}
+
+
+/*loading*/
+
+
+/*upload*/
+
+.theme-default .g-upload {
+  width: 265px;
+  text-align: left;
+}
+
+.theme-default .g-upload a.imgcontent {
+  width: 150px;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  padding: 0 2px;
+  font-size: 12px;
+  margin-left: 5px;
+  color: #111;
+}
+
+.theme-default .g-upload a.imgcontent:hover {
+  background: #eee;
+  color: #2d97de;
+}
+
+
+/*upload*/
+
+
+/*重新el样式*/
+
+.el-input__inner {
+  border-radius: 0;
+  height: 30px;
+  border: 1px solid #ccc;
+  font-size: 12px;
+}
+
+.el-input__icon {
+  color: #9e9e9e;
+}
+
+.el-input__inner:hover {
+  border: 1px solid #ccc
+}
+
+.el-select-dropdown__item {
+  font-size: 12px;
+  height: 30px;
+  padding: 6px 10px;
+}
+
+.el-input__icon+.el-input__inner {
+  padding-right: 37px;
+}
+
+.el-upload .el-upload__files {
+  position: absolute;
+  left: 95px;
+}
+
+.el-upload .el-upload__files li {
+  width: 200px;
+}
+
+.el-upload__file .el-progress__text {
+  top: 65px
+}

@@ -14,7 +14,7 @@ ax.interceptors.response.use(
     // 关闭遮罩
     // Vue.$vux.loading.hide();
     if (response.data.msg && response.data.msg.indexOf('请登录') >= 0) {
-      window.location.href = process.env.loginUrl; // 跳转用户中心运营平台
+      window.location.href = process.env.VUE_APP_LOGIN_URL; // 跳转用户中心运营平台
     }
     if (!(response.config.params && response.config.params.requestNoToast)) {
       if (!response.data.isSuccess) {

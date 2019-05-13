@@ -1219,7 +1219,7 @@ export default {
   },
   data() {
     return {
-      xlsDownloadUrl: `${process.env.publicPath}static/型号.xls`,
+      xlsDownloadUrl: `${process.env.VUE_APP_PUBLIC_PATH}static/型号.xls`,
       choosedExcelName: '', // 选择的表格名
       title: '配置单品权益',
       isImportExcelDialog: false, // 解析excel对话框

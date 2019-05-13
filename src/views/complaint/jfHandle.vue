@@ -10,7 +10,7 @@
     <div v-loading="msgListLoading">
       <el-table :data="msgListData.entities" style="width: 100%" :row-class-name="listRowClass">
         <el-table-column align="center" prop="templateName" label="序号" width="50">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ (msgListData.pageNo - 1) * msgListData.pageSize + scope.$index + 1 }}
           </template>
         </el-table-column>
@@ -19,7 +19,7 @@
         <el-table-column align="center" prop="point" label="套购积分值"> </el-table-column>
         <el-table-column align="center" prop="crTime" label="处理日期" show-overflow-tooltip> </el-table-column>
         <el-table-column align="center" label="凭证文件下载">
-          <template scope="scope">
+          <template slot-scope="scope">
             <el-button type="text" size="small" @click.native="downAddPoint(scope.row.path)">下载</el-button>
           </template>
         </el-table-column>

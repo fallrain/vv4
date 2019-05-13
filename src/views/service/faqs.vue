@@ -58,25 +58,25 @@
         <div v-loading="msgListLoading" style="margin-bottom: 32px">
           <el-table :data="msgListData.entities" style="width: 100%">
             <el-table-column prop="templateName" label="序号" width="50">
-              <template scope="scope">
+              <template slot-scope="scope">
                 {{ (msgListData.pageNo - 1) * msgListData.pageSize + scope.$index + 1 }}
               </template>
             </el-table-column>
             <el-table-column prop="categoryName" label="分类" min-width="15%" show-overflow-tooltip> </el-table-column>
             <el-table-column prop="question" label="知识内容" min-width="40%">
-              <template scope="scope">
+              <template slot-scope="scope">
                 <p class="aq-desc">Q : {{ scope.row.question }}</p>
                 <p class="aq-desc">A : {{ scope.row.answer }}</p>
               </template>
             </el-table-column>
             <el-table-column prop="crUserName" label="创建人" min-width="15%" show-overflow-tooltip> </el-table-column>
             <el-table-column prop="crTime" label="创建时间" min-width="15%" show-overflow-tooltip>
-              <template scope="scope">
+              <template slot-scope="scope">
                 {{ gUtils.dateFormat(scope.row.crTime, 'yyyy-MM-dd') }}
               </template>
             </el-table-column>
             <el-table-column label="操作" min-width="30%">
-              <template scope="scope">
+              <template slot-scope="scope">
                 <a
                   href="javascript:;"
                   class="color-link operation-btn"
@@ -135,20 +135,20 @@
         <div v-loading="historyListLoading">
           <el-table :data="historyListData.entities" style="width: 100%">
             <el-table-column prop="templateName" label="序号" width="50">
-              <template scope="scope">
+              <template slot-scope="scope">
                 {{ (msgListData.pageNo - 1) * msgListData.pageSize + scope.$index + 1 }}
               </template>
             </el-table-column>
             <el-table-column prop="subject" label="主题" min-width="20%" show-overflow-tooltip> </el-table-column>
             <!-- <el-table-column prop="content" label="内容" min-width="20%" show-overflow-tooltip>
-                  <template scope="scope">
+                  <template slot-scope="scope">
                     <div v-html="scope.row.content"></div>
                   </template>
                 </el-table-column> -->
             <el-table-column prop="crUserName" label="维护人" min-width="20%"> </el-table-column>
             <el-table-column prop="crTime" label="发送时间" min-width="20%"> </el-table-column>
             <el-table-column label="操作" min-width="20%">
-              <template scope="scope">
+              <template slot-scope="scope">
                 <a href="javascript:;" class="color-link operation-btn" @click="toDetail(scope.row.id, 'view')"
                   ><i class="iconfont icon-chakan"></i>查看</a
                 >
@@ -188,20 +188,20 @@
         <div v-loading="mailListLoading">
           <el-table :data="mailListData.entities" style="width: 100%">
             <el-table-column prop="templateName" label="序号" width="50">
-              <template scope="scope">
+              <template slot-scope="scope">
                 {{ (msgListData.pageNo - 1) * msgListData.pageSize + scope.$index + 1 }}
               </template>
             </el-table-column>
             <el-table-column prop="templateName" label="主题" min-width="20%" show-overflow-tooltip> </el-table-column>
             <!-- <el-table-column prop="content" label="内容" min-width="20%" show-overflow-tooltip>
-                  <template scope="scope">
+                  <template slot-scope="scope">
                     <div v-html="scope.row.content"></div>
                   </template>
                 </el-table-column> -->
             <el-table-column prop="crUserName" label="维护人" min-width="20%"> </el-table-column>
             <el-table-column prop="crTime" label="创建时间" min-width="20%"> </el-table-column>
             <el-table-column label="操作" min-width="20%">
-              <template scope="scope">
+              <template slot-scope="scope">
                 <a href="javascript:;" class="color-link operation-btn" @click="toDetail(scope.row.id, 'edit')"
                   ><i class="iconfont icon-xiugai"></i>修改</a
                 >

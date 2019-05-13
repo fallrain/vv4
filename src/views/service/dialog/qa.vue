@@ -7,7 +7,7 @@
       <el-table ref="multipleTable" :data="msgListData.entities" border tooltip-effect="dark" max-height="300" @select="handleSelectionChange" @select-all="selectAll">
         <el-table-column type="selection" width="55"> </el-table-column>
         <el-table-column prop="question" label="常用内容">
-          <template scope="scope">
+          <template slot-scope="scope">
               <p class="aq-desc">Q : {{scope.row.question}}</p>
               <p class="aq-desc">A : {{scope.row.answer}}</p>
             </template>

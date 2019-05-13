@@ -11,7 +11,10 @@ import './services/core';
 import './services/vipcenter/comm/comm.service'; // 服务
 
 import './components/index';
+
 import ElementUI from 'element-ui';
+import './assets/css/element-variables.scss'
+
 import VeeValidate, {
   Validator
 } from 'vee-validate';
@@ -22,7 +25,7 @@ import './filters/';
 import './assets/css/fixer.css';
 import './assets/css/iconfont.css';
 import './assets/css/base.scss';
-import './assets/css/components.css';
+import './assets/css/components.scss';
 import '@/assets/css/common.scss';
 import configs from './config/config';
 

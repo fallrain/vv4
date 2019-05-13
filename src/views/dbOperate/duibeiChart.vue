@@ -93,7 +93,7 @@
       <!---->
       <el-table :data="msgListDataCenter.entities" border>
         <el-table-column prop="templateName" label="序号" width="60">
-          <template scope="scope">{{
+          <template slot-scope="scope">{{
             (msgListDataCenter.pageNo - 1) * msgListDataCenter.pageSize + scope.$index + 1
           }}</template>
         </el-table-column>
@@ -125,7 +125,7 @@
         <el-table-column prop="latency" label="当月潜客数" show-overflow-tooltip></el-table-column>
         <el-table-column prop="score" label="综合评分" show-overflow-tooltip></el-table-column>
         <el-table-column prop="createTime" label="更新时间" width="150" show-overflow-tooltip>
-          <template scope="scope">{{ scope.row.createTime | formatDate }}</template>
+          <template slot-scope="scope">{{ scope.row.createTime | formatDate }}</template>
         </el-table-column>
       </el-table>
       <el-pagination
@@ -143,7 +143,7 @@
       <!---->
       <el-table :data="msgListDataIndustry.entities" border>
         <el-table-column prop="templateName" label="序号" width="60">
-          <template scope="scope">{{
+          <template slot-scope="scope">{{
             (msgListDataIndustry.pageNo - 1) * msgListDataIndustry.pageSize + scope.$index + 1
           }}</template>
         </el-table-column>
@@ -175,7 +175,7 @@
         <el-table-column prop="latency" label="当月潜客数" show-overflow-tooltip></el-table-column>
         <el-table-column prop="score" label="综合评分" show-overflow-tooltip></el-table-column>
         <el-table-column prop="createTime" label="更新时间" width="150" show-overflow-tooltip>
-          <template scope="scope">{{ scope.row.createTime | formatDate }}</template>
+          <template slot-scope="scope">{{ scope.row.createTime | formatDate }}</template>
         </el-table-column>
       </el-table>
       <el-pagination
@@ -193,7 +193,7 @@
       <!---->
       <el-table :data="msgListDataChannel.entities" border>
         <el-table-column prop="templateName" label="序号" width="60">
-          <template scope="scope">{{
+          <template slot-scope="scope">{{
             (msgListDataChannel.pageNo - 1) * msgListDataChannel.pageSize + scope.$index + 1
           }}</template>
         </el-table-column>
@@ -225,7 +225,7 @@
         <el-table-column prop="latency" label="当月潜客数" show-overflow-tooltip></el-table-column>
         <el-table-column prop="score" label="综合评分" show-overflow-tooltip></el-table-column>
         <el-table-column prop="createTime" label="更新时间" width="150" show-overflow-tooltip>
-          <template scope="scope">{{ scope.row.createTime | formatDate }}</template>
+          <template slot-scope="scope">{{ scope.row.createTime | formatDate }}</template>
         </el-table-column>
       </el-table>
       <el-pagination
@@ -243,17 +243,17 @@
       <!---->
       <el-table :data="msgListDataZXY.entities" border>
         <el-table-column prop="templateName" label="序号" width="60">
-          <template scope="scope">{{
+          <template slot-scope="scope">{{
             (msgListDataZXY.pageNo - 1) * msgListDataZXY.pageSize + scope.$index + 1
           }}</template>
         </el-table-column>
         <el-table-column prop="use" label="是否使用" show-overflow-tooltip>
-          <template scope="scope">{{ scope.row.use | useFilter }}</template>
+          <template slot-scope="scope">{{ scope.row.use | useFilter }}</template>
         </el-table-column>
         <el-table-column prop="hmcId" label="直销员工号" width="120" show-overflow-tooltip></el-table-column>
         <el-table-column prop="sellerName" label="直销员名字" width="120" show-overflow-tooltip></el-table-column>
         <el-table-column prop="hireDate" label="入职时间" width="190">
-          <template scope="scope">{{ scope.row.hireDate | formatDateHire }}</template>
+          <template slot-scope="scope">{{ scope.row.hireDate | formatDateHire }}</template>
         </el-table-column>
         <el-table-column prop="shopCode" label="门店编码" width="120" show-overflow-tooltip></el-table-column>
         <el-table-column prop="shopName" label="门店名" width="120" show-overflow-tooltip></el-table-column>
@@ -290,7 +290,7 @@
           show-overflow-tooltip
         ></el-table-column>
         <el-table-column prop="createTime" label="更新时间" width="150" show-overflow-tooltip>
-          <template scope="scope">{{ scope.row.createTime | formatDate }}</template>
+          <template slot-scope="scope">{{ scope.row.createTime | formatDate }}</template>
         </el-table-column>
       </el-table>
       <el-pagination
@@ -308,17 +308,17 @@
       <!---->
       <el-table :data="msgListDataZXYQuery.entities" border>
         <el-table-column prop="templateName" label="序号" width="60">
-          <template scope="scope">{{
+          <template slot-scope="scope">{{
             (msgListDataZXYQuery.pageNo - 1) * msgListDataZXYQuery.pageSize + scope.$index + 1
           }}</template>
         </el-table-column>
         <el-table-column prop="use" label="是否使用" show-overflow-tooltip>
-          <template scope="scope">{{ scope.row.use | useFilter }}</template>
+          <template slot-scope="scope">{{ scope.row.use | useFilter }}</template>
         </el-table-column>
         <el-table-column prop="hmcId" label="直销员工号" width="120" show-overflow-tooltip></el-table-column>
         <el-table-column prop="sellerName" label="直销员名字" width="120" show-overflow-tooltip></el-table-column>
         <el-table-column prop="hireDate" label="入职时间" width="190">
-          <template scope="scope">{{ scope.row.hireDate | formatDateHire }}</template>
+          <template slot-scope="scope">{{ scope.row.hireDate | formatDateHire }}</template>
         </el-table-column>
         <el-table-column prop="shopCode" label="门店编码" width="120" show-overflow-tooltip></el-table-column>
         <el-table-column prop="shopName" label="门店名" width="120" show-overflow-tooltip></el-table-column>
@@ -355,7 +355,7 @@
           show-overflow-tooltip
         ></el-table-column>
         <el-table-column prop="createTime" label="更新时间" width="150" show-overflow-tooltip>
-          <template scope="scope">{{ scope.row.createTime | formatDate }}</template>
+          <template slot-scope="scope">{{ scope.row.createTime | formatDate }}</template>
         </el-table-column>
       </el-table>
       <el-pagination

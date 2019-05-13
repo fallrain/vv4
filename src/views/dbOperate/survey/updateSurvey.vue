@@ -152,7 +152,7 @@
                     <el-table-column prop="giftId" label="编号" width="70" style="padding-left: 10px;">
                     </el-table-column>
                     <el-table-column label="礼品图片">
-                      <template scope="scope">
+                      <template slot-scope="scope">
                           <img :src="scope.row.imgUrl" style="width:60px;height:80px;padding: 10px 0;" @click="imgDescription(scope.row)" title="点击查看详情">
                       </template>
                     </el-table-column>
@@ -167,7 +167,7 @@
                     <el-table-column prop="budget" label="海贝总预算">
                     </el-table-column>
                     <el-table-column label="操作">
-                      <template scope="scope">
+                      <template slot-scope="scope">
                         <el-button type="primary" @click="deleteClick(scope.row)">删除</el-button>
                       </template>
                     </el-table-column>
@@ -2175,7 +2175,6 @@ export default {
 };
 </script>
 <style scoped>
-  @import url("//unpkg.com/element-ui@1.4.6/lib/theme-default/index.css");
   hr{
       color: #000;
   }

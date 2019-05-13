@@ -1,0 +1,34 @@
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+/* Checkbox
+-------------------------- */
+/// fontSize||Font|1
+// $--checkbox-font-size: 14px !default;
+/// fontWeight||Font|1
+// $--checkbox-font-weight: $--font-weight-primary !default;
+/// color||Color|0
+// $--checkbox-font-color: $--color-text-regular !default;
+$--checkbox-input-height: 18px;
+$--checkbox-input-width: 18px;
+
+/* Radio
+-------------------------- */
+/// fontSize||Font|1
+// $--radio-font-size: $--font-size-base !default;
+/// fontWeight||Font|1
+// $--radio-font-weight: $--font-weight-primary !default;
+/// color||Color|0
+// $--radio-font-color: $--color-text-regular !default;
+$--radio-input-height: 18px;
+$--radio-input-width: 18px;
+/**/
+
+/* Switch
+-------------------------- */
+/// color||Color|0
+$--switch-on-color: #13ce66;
+/// color||Color|0
+$--switch-off-color: #ff4949;
+
+@import "~element-ui/packages/theme-chalk/src/index";

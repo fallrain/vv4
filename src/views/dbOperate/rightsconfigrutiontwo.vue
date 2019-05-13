@@ -154,12 +154,12 @@
           </el-table-column>
           <el-table-column prop="crUserName" label="创建人" width="100" show-overflow-tooltip> </el-table-column>
           <el-table-column prop="crTime" label="创建时间" width="140" show-overflow-tooltip>
-            <template scope="scope">
+            <template slot-scope="scope">
               {{ scope.row.crTime | formatDate }}
             </template>
           </el-table-column>
           <el-table-column prop="crTime" label="操作" width="160">
-            <template scope="scope">
+            <template slot-scope="scope">
               <div class="tab_btnSet">
                 <button @click="preViewSurvey(scope.row)">预览</button>
                 <button @click="copySurvey(scope.row)">复制问卷</button>

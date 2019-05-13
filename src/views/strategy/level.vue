@@ -16,32 +16,32 @@
     <div v-loading="msgListLoading">
       <el-table :data="msgListData.entities" style="width: 100%">
         <el-table-column prop="templateName" label="序号" width="50">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ (msgListData.pageNo - 1) * msgListData.pageSize + scope.$index + 1 }}
           </template>
         </el-table-column>
         <el-table-column prop="rankName" label="会员等级" min-width="28%"> </el-table-column>
         <el-table-column prop="integrationBrand" label="会员权益" min-width="28%">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ scope.row.vipRight }}
           </template>
         </el-table-column>
         <el-table-column prop="integrationBrand" labelstrategy="启用" min-width="28%">
-          <template scope="scope">
+          <template slot-scope="scope">
             <el-switch
               v-if="jurisdiction['strategyOperations:rankStrategy:edit']"
               v-model="scope.row.status"
               on-color="#13ce66"
               off-color="#ff4949"
-              :on-value="1"
-              :off-value="-3"
+              :active-value="1"
+              :inactive-value="-3"
               @change="switchChange(scope.row.id, scope.row.brandName, scope.row.status)"
             >
             </el-switch>
           </template>
         </el-table-column>
         <el-table-column label="操作" min-width="16%">
-          <template scope="scope">
+          <template slot-scope="scope">
             <a
               v-if="jurisdiction['strategyOperations:rankStrategy:edit']"
               href="javascript:;"

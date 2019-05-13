@@ -18,12 +18,12 @@
         <el-table-column prop="name" label="小微" width="100"> </el-table-column>
         <el-table-column v-for="(thead, theadIndex) in rightDetailData.thead" :label="thead">
           <el-table-column label="已分配数量" width="100">
-            <template scope="scope">
+            <template slot-scope="scope">
               {{ scope.row.config[theadIndex].allocated }}
             </template>
           </el-table-column>
           <el-table-column label="已消耗数量" width="100">
-            <template scope="scope">
+            <template slot-scope="scope">
               {{ scope.row.config[theadIndex].consumed }}
             </template>
           </el-table-column>
@@ -36,7 +36,7 @@
         </el-table-column>
 
         <el-table-column label="详情">
-          <template scope="scope">
+          <template slot-scope="scope">
             <a href="javascript:;" v-if="scope.row.name != '总计'" class="color-link" @click="qyReviewDetail(scope)"
               >查看详情</a
             >
@@ -934,34 +934,6 @@ export default {
   font-weight: normal;
 }
 
-.detail-dialog .el-dialog__header p {
-  padding: 0;
-}
-
-.detail-dialog .el-dialog {
-  width: 820px;
-}
-
-.detail-dialog .el-dialog__body {
-  padding-top: 4px;
-}
-
-.el-table th,
-.el-table th div {
-  background: #e0f0ff;
-  font-weight: normal;
-}
-
-.el-table__body-wrapper tr:nth-child(odd) {
-}
-
-.el-table__body-wrapper tr:nth-child(even) {
-  background: #f6f6f6;
-}
-
-.el-tooltip__popper {
-  max-width: 600px;
-}
 
 .el-dialog__body .config-item .el-table__body-wrapper {
   overflow-x: auto;

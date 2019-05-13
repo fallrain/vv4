@@ -86,7 +86,7 @@
                   <el-table-column prop="rightsName" label="权益名称" width="100" show-overflow-tooltip>
                   </el-table-column>
                   <el-table-column prop="time" label="" width="240">
-                    <template scope="scope">
+                    <template slot-scope="scope">
                           限制
                           <el-input v-model="scope.row.validNum" style="width: 60px;" :maxlength="5" @keyup.native="rightValidNumChange(scope.row.validNum, scope.row.index)"></el-input>
                           <el-select v-model="scope.row.validType" style="width: 120px;">
@@ -97,7 +97,7 @@
                     </template>
                   </el-table-column>
                   <el-table-column prop="time" label="" @selection-change="rightHandleSelectionChange">
-                    <template scope="scope">
+                    <template slot-scope="scope">
                           <div v-if="scope.row.type == 1">
                             限制
                             <el-select v-model="scope.row.useFrequencyType" style="width: 120px;">
@@ -130,7 +130,7 @@
                   <el-table-column prop="rightsName" label="权益名称" width="100">
                   </el-table-column>
                   <el-table-column prop="time" label="" width="240">
-                    <template scope="scope">
+                    <template slot-scope="scope">
                           限制
                         <el-input v-model="scope.row.validNum" style="width: 60px;" :maxlength="5" @keyup.native="rightValidNumChange(scope.row.validNum, scope.row.index)"></el-input>
                           <el-select v-model="scope.row.validType" placeholder="请选择频率" style="width: 120px;">
@@ -141,7 +141,7 @@
                     </template>
                   </el-table-column>
                   <el-table-column prop="time" label="">
-                    <template scope="scope">
+                    <template slot-scope="scope">
                           <div v-if="scope.row.type == 1">
                             限制
                             <el-select v-model="scope.row.useFrequencyType" style="width: 120px;">

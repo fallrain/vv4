@@ -18,7 +18,7 @@
       <el-table-column prop="mmt_product_line_code" label="产品线编码" width="180"> </el-table-column>
       <el-table-column prop="bccprice" label="价格" width="180"> </el-table-column>
       <el-table-column label="操作" min-width="180">
-        <template scope="scope">
+        <template slot-scope="scope">
           <el-button type="text" @click="revisePrice(scope.row)" v-if="getUserInfo.brandName == 'haier'"
             >修改价格</el-button
           >

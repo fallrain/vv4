@@ -108,14 +108,14 @@
         <el-table-column prop="trade_code_name" label="小微" show-overflow-tooltip> </el-table-column>
         <el-table-column prop="sellerStatus" label="状态" show-overflow-tooltip> </el-table-column>
         <el-table-column label="冻结时间" width="220" show-overflow-tooltip :formatter="formatterTime">
-          <!-- <template scope="scope" >
+          <!-- <template slot-scope="scope" >
                         <span v-if="scope.row.frozenBeginTime != '' && scope.row.frozenEndTime != ''">{{scope.row.frozenBeginTime}} , {{scope.row.frozenEndTime}}</span>
                         <span v-else>无</span>
                     </template>                     -->
         </el-table-column>
         <el-table-column prop="frozenRemark" width="150" label="冻结原因" show-overflow-tooltip> </el-table-column>
         <el-table-column label="操作" width="200">
-          <template scope="scope">
+          <template slot-scope="scope">
             <span>
               <el-button
                 type="text"

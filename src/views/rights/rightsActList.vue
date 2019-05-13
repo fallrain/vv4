@@ -56,25 +56,25 @@
       <!---->
       <el-table :data="msgListData.entities" border>
         <el-table-column prop="templateName" label="序号" width="50">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ (msgListData.pageNo - 1) * msgListData.pageSize + scope.$index + 1 }}
           </template>
         </el-table-column>
         <el-table-column prop="userName" label="创建者" width="120" show-overflow-tooltip> </el-table-column>
         <el-table-column prop="rightName" label="权益活动名称" width="120" show-overflow-tooltip> </el-table-column>
         <el-table-column prop="startTime" label="权益活动有效期" width="190">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ scope.row.startTime | dateFilter }} - {{ scope.row.endTime | dateFilter | endTimeFilter }}
           </template>
         </el-table-column>
         <el-table-column prop="budgetAmount" label="预算(元)" show-overflow-tooltip>
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ scope.row.budgetAmount }}
           </template>
         </el-table-column>
         <!-- <el-table-column prop="groupName" label="适用分组" min-width="12%" show-overflow-tooltip> </el-table-column>  -->
         <el-table-column prop="remainAmount" label="剩余预算(元)" show-overflow-tooltip>
-          <template scope="scope">
+          <template slot-scope="scope">
             <div
               v-if="isChian || (!isChian && !scope.row.chinaRegionFlag == '1')"
               v-loading="remainAmountLoading"
@@ -89,18 +89,18 @@
         <el-table-column prop="xiaoweiName" label="小微" show-overflow-tooltip> </el-table-column>
         <el-table-column prop="channelName" label="渠道" show-overflow-tooltip> </el-table-column>
         <el-table-column prop="time" label="详情" show-overflow-tooltip>
-          <template scope="scope">
+          <template slot-scope="scope">
             <a href="javascript:;" class="color-link" @click="reviewDetail(scope)">查看详情</a>
           </template>
         </el-table-column>
         <el-table-column prop="time" label="权益使用详情" show-overflow-tooltip width="120">
-          <template scope="scope">
+          <template slot-scope="scope">
             <a href="javascript:;" class="color-link" @click="qyReviewDetail(scope)">查看详情</a>
           </template>
         </el-table-column>
         ;
         <el-table-column prop="status" label="状态">
-          <template scope="scope">
+          <template slot-scope="scope">
             <el-popover
               trigger="hover"
               placement="top"
@@ -210,7 +210,7 @@
           </template>
         </el-table-column>
         <el-table-column label="操作" width="120">
-          <template scope="scope">
+          <template slot-scope="scope">
             <a
               v-if="scope.row.status == 10"
               href="javascript:;"
@@ -290,25 +290,25 @@
         <div v-loading="msgListLoading" class="rights-act-list">
           <el-table :data="msgListData.entities" border>
             <el-table-column prop="templateName" label="序号" width="50">
-              <template scope="scope">
+              <template slot-scope="scope">
                 {{ (msgListData.pageNo - 1) * msgListData.pageSize + scope.$index + 1 }}
               </template>
             </el-table-column>
             <el-table-column prop="userName" label="创建者" width="120" show-overflow-tooltip> </el-table-column>
             <el-table-column prop="rightName" label="权益活动名称" width="120" show-overflow-tooltip> </el-table-column>
             <el-table-column prop="startTime" label="权益活动有效期" width="190">
-              <template scope="scope">
+              <template slot-scope="scope">
                 {{ scope.row.startTime | dateFilter }} - {{ scope.row.endTime | dateFilter | endTimeFilter }}
               </template>
             </el-table-column>
             <el-table-column prop="budgetAmount" label="预算(元)" show-overflow-tooltip>
-              <template scope="scope">
+              <template slot-scope="scope">
                 {{ scope.row.budgetAmount }}
               </template>
             </el-table-column>
             <!-- <el-table-column prop="groupName" label="适用分组" min-width="12%" show-overflow-tooltip> </el-table-column>  -->
             <el-table-column prop="remainAmount" label="剩余预算(元)" width="120" show-overflow-tooltip>
-              <template scope="scope">
+              <template slot-scope="scope">
                 <div
                   v-if="isChian || (!isChian && !scope.row.chinaRegionFlag == '1')"
                   v-loading="remainAmountLoading"
@@ -323,17 +323,17 @@
             <el-table-column prop="xiaoweiName" label="小微" show-overflow-tooltip> </el-table-column>
             <el-table-column prop="channelName" label="渠道" show-overflow-tooltip> </el-table-column>
             <el-table-column prop="time" label="详情" show-overflow-tooltip>
-              <template scope="scope">
+              <template slot-scope="scope">
                 <a href="javascript:;" class="color-link" @click="reviewDetail(scope)">查看详情</a>
               </template>
             </el-table-column>
             <el-table-column prop="time" label="权益使用详情" show-overflow-tooltip width="120">
-              <template scope="scope">
+              <template slot-scope="scope">
                 <a href="javascript:;" class="color-link" @click="qyReviewDetail(scope)">查看详情</a>
               </template>
             </el-table-column>
             <el-table-column prop="status" label="状态">
-              <template scope="scope">
+              <template slot-scope="scope">
                 <el-popover
                   trigger="hover"
                   placement="top"
@@ -445,7 +445,7 @@
               </template>
             </el-table-column>
             <el-table-column label="操作" width="200">
-              <template scope="scope">
+              <template slot-scope="scope">
                 <a
                   v-if="scope.row.status == 10"
                   href="javascript:;"
@@ -522,25 +522,25 @@
         <div v-loading="msgListLoading" class="rights-act-list">
           <el-table :data="msgChinaListData.entities" border>
             <el-table-column prop="templateName" label="序号" width="50">
-              <template scope="scope">
+              <template slot-scope="scope">
                 {{ (msgChinaListData.pageNo - 1) * msgChinaListData.pageSize + scope.$index + 1 }}
               </template>
             </el-table-column>
             <el-table-column prop="userName" label="创建者" width="120" show-overflow-tooltip> </el-table-column>
             <el-table-column prop="rightName" label="权益活动名称" width="120" show-overflow-tooltip> </el-table-column>
             <el-table-column prop="startTime" label="权益活动有效期" width="190">
-              <template scope="scope">
+              <template slot-scope="scope">
                 {{ scope.row.startTime | dateFilter }} - {{ scope.row.endTime | dateFilter | endTimeFilter }}
               </template>
             </el-table-column>
             <el-table-column prop="budgetAmount" label="预算(元)" show-overflow-tooltip>
-              <template scope="scope">
+              <template slot-scope="scope">
                 {{ scope.row.budgetAmount }}
               </template>
             </el-table-column>
             <!-- <el-table-column prop="groupName" label="适用分组" min-width="12%" show-overflow-tooltip> </el-table-column>  -->
             <el-table-column prop="remainAmount" label="剩余预算(元)" show-overflow-tooltip>
-              <template scope="scope">
+              <template slot-scope="scope">
                 <div
                   v-if="scope.row.remainBrandName == '海尔'"
                   v-loading="remainAmountLoading"
@@ -560,12 +560,12 @@
             <el-table-column prop="xiaoweiName" label="小微" show-overflow-tooltip> </el-table-column>
             <el-table-column prop="channelName" label="渠道" show-overflow-tooltip> </el-table-column>
             <el-table-column prop="time" label="详情" show-overflow-tooltip>
-              <template scope="scope">
+              <template slot-scope="scope">
                 <a href="javascript:;" class="color-link" @click="reviewChinaDetail(scope)">查看详情</a>
               </template>
             </el-table-column>
             <el-table-column prop="time" label="权益使用详情" show-overflow-tooltip width="120">
-              <template scope="scope">
+              <template slot-scope="scope">
                 <a
                   :href="
                     './#/rights/rightsuseingdetail?id=' +
@@ -582,7 +582,7 @@
               </template>
             </el-table-column>
             <el-table-column prop="status" label="状态">
-              <template scope="scope">
+              <template slot-scope="scope">
                 <el-popover
                   trigger="hover"
                   placement="top"
@@ -679,7 +679,7 @@
               </template>
             </el-table-column>
             <el-table-column label="操作" width="120">
-              <template scope="scope">
+              <template slot-scope="scope">
                 <!--<a v-if="scope.row.status == 10" href="javascript:;" class="color-link operation-btn" @click="start(scope.row.id)">开启</a>-->
                 <a
                   v-if="scope.row.stopSign == 1"
@@ -1569,12 +1569,12 @@
           <el-table-column prop="xiaoweiName" v-for="(item, index) in arr" label="小微" width="150"> </el-table-column>
           <el-table-column v-for="(item, index) in danpindata.titleInfo" :key="index" :label="item">
             <el-table-column :label="title[index].one" :show-overflow-tooltip="true">
-              <template scope="scope">
+              <template slot-scope="scope">
                 {{ scope.row.numList[2 * index] }}
               </template>
             </el-table-column>
             <el-table-column :label="title[index].two" :show-overflow-tooltip="true">
-              <template scope="scope">
+              <template slot-scope="scope">
                 {{ scope.row.numList[2 * index + 1] }}
               </template>
             </el-table-column>
@@ -1611,12 +1611,12 @@
           <el-table-column prop="xiaoweiName" v-for="(item, index) in arr" label="小微" width="150"> </el-table-column>
           <el-table-column v-for="(item, index) in dulidata.titleInfo" :key="index" :label="item">
             <el-table-column :label="title[index].one" :show-overflow-tooltip="true">
-              <template scope="scope">
+              <template slot-scope="scope">
                 {{ scope.row.numList[2 * index] }}
               </template>
             </el-table-column>
             <el-table-column :label="title[index].two" :show-overflow-tooltip="true">
-              <template scope="scope">
+              <template slot-scope="scope">
                 {{ scope.row.numList[2 * index + 1] }}
               </template>
             </el-table-column>
@@ -3155,34 +3155,6 @@ export default {
 
 /* .rights-act-list .el-table .cell{ overflow: auto!important;} */
 
-.detail-dialog .el-dialog__header p {
-  padding: 0;
-}
-
-.detail-dialog .el-dialog {
-  width: 820px;
-}
-
-.detail-dialog .el-dialog__body {
-  padding-top: 4px;
-}
-
-.el-table th,
-.el-table th div {
-  background: #e0f0ff;
-  font-weight: normal;
-}
-
-.el-table__body-wrapper tr:nth-child(odd) {
-}
-
-.el-table__body-wrapper tr:nth-child(even) {
-  background: #f6f6f6;
-}
-
-.el-tooltip__popper {
-  max-width: 600px;
-}
 
 .el-table_1_column_5 .cell.el-tooltip > div {
   position: initial !important;

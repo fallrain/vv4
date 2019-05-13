@@ -27,7 +27,7 @@
         <el-table-column prop="mobile" label="手机号" min-width="20%"> </el-table-column>
         <el-table-column prop="email" label="邮箱" min-width="40%"> </el-table-column>
         <!-- <el-table-column label="操作" min-width="20%">
-              <template scope="scope">
+              <template slot-scope="scope">
                 <a v-if="jurisdiction['member:memberTabManger:update']" href="javascript:;" class="color-link operation-btn" @click="addLabel(scope.row.id, scope.row)"><i class="iconfont icon-xiugai"></i>修改</a>
                 <a v-if="jurisdiction['member:memberTabManger:delete']" href="javascript:;" class="color-link operation-btn" @click="deleteCustomer(scope.row.id)"><i class="iconfont icon-shanchu-copy"></i>删除</a>
               </template>

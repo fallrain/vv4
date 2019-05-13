@@ -55,7 +55,7 @@
 
     <el-table v-loading="loading" border :data="tableData" style="width: 100%;margin-top: 20px;">
       <el-table-column label="序号" width="80" :show-overflow-tooltip="true">
-        <template scope="scope">
+        <template slot-scope="scope">
           {{ (pageNo - 1) * pageSize + scope.$index + 1 }}
         </template>
       </el-table-column>
@@ -71,7 +71,7 @@
       <el-table-column prop="operateDate" label="更新时间" width="160" :show-overflow-tooltip="true"> </el-table-column>
       <el-table-column prop="operateBy" label="更新者" width="110" :show-overflow-tooltip="true"> </el-table-column>
       <el-table-column label="操作" min-width="200" :show-overflow-tooltip="true">
-        <template scope="scope">
+        <template slot-scope="scope">
           <el-button
             type="text"
             v-if="scope.row.mark_flag == 0 && jurisdiction['servicesOperations:casartePriceManager:status']"

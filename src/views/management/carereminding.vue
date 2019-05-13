@@ -41,26 +41,26 @@
       <el-table-column prop="name" label="提醒事项" width="180"> </el-table-column>
       <el-table-column prop="textstatus" label="状态" width="180"> </el-table-column>
       <el-table-column label="详情" width="180">
-        <template scope="scope">
+        <template slot-scope="scope">
           <el-button type="text" @click="getdetails(scope.row.id)">查看详情</el-button>
         </template>
       </el-table-column>
       <el-table-column label="上下架">
-        <template scope="scope">
+        <template slot-scope="scope">
           <el-switch
             v-if="scope.row.status == 1 || scope.row.status == 2"
             v-model="scope.row.status"
             on-color="#13ce66"
             off-color="#ff4949"
-            :on-value="1"
-            :off-value="2"
+            :active-value="1"
+            :inactive-value="2"
             @change="switchChange(scope.row.id, scope.row.status)"
           >
           </el-switch>
         </template>
       </el-table-column>
       <el-table-column label="操作">
-        <template scope="scope">
+        <template slot-scope="scope">
           <el-button
             v-if="scope.row.status != 1"
             type="text"

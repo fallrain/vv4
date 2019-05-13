@@ -68,7 +68,7 @@
     <div v-loading="msgListLoading">
       <el-table :data="msgListData.entities" style="width: 100%" border>
         <el-table-column prop="templateName" label="序号" width="50">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ (msgListData.pageNo - 1) * msgListData.pageSize + scope.$index + 1 }}
           </template>
         </el-table-column>
@@ -76,7 +76,7 @@
         <el-table-column prop="mobile" label="申诉手机号" min-width="20%" show-overflow-tooltip> </el-table-column>
         <el-table-column prop="skuCode" label="产品序列号" min-width="20%" show-overflow-tooltip> </el-table-column>
         <el-table-column prop="appealReason" label="申诉理由" min-width="25%">
-          <template scope="scope">
+          <template slot-scope="scope">
             <el-tooltip placement="right" v-if="scope.row.appealReason && scope.row.appealReason.length >= 7">
               <div slot="content">{{ scope.row.appealReason }}</div>
               <div class="vip_appealReason">{{ scope.row.appealReason }}</div>
@@ -90,14 +90,14 @@
         </el-table-column>
         <el-table-column prop="rejectReason" label="驳回原因" min-width="20%" show-overflow-tooltip> </el-table-column>
         <el-table-column label="详情" min-width="17%">
-          <template scope="scope">
+          <template slot-scope="scope">
             <a href="javascript:;" class="operation-btn color-link" @click="detail(scope.row.id, scope.row)">
               <i class="iconfont icon-chakan"></i>查看</a
             >
           </template>
         </el-table-column>
         <!--<el-table-column prop="auditStatus" label="状态" min-width="17%">-->
-        <!--<template scope="scope">-->
+        <!--<template slot-scope="scope">-->
         <!--{{scope.row.status}}-->
         <!--&lt;!&ndash; 未处理 &ndash;&gt;-->
         <!--<span v-if="scope.row.auditStatus == 0&&scope.row.ptId!=null" style="color:#f28902;">{{scope.row.auditStatus | statusFilter}}</span>-->
@@ -115,7 +115,7 @@
         <!--</el-table-column>-->
 
         <el-table-column label="操作" min-width="30%" style="position: relative">
-          <template scope="scope">
+          <template slot-scope="scope">
             <span v-if="scope.row.assignStatus == null && scope.row.auditStatus == '1'">已通过</span>
             <span v-if="scope.row.assignStatus == null && scope.row.auditStatus == '2'">已驳回</span>
             <el-tooltip

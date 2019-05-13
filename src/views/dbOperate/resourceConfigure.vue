@@ -45,14 +45,14 @@
                 center
                 min-width="10%"
                 prop="status">
-                <template scope="scope">
+                <template slot-scope="scope">
                     <el-switch
                       v-model="scope.row.status"
                       on-color="#13ce66"
                       off-color="#ff4949"
                       @change="switchChange(scope.row)"
-                      :on-value="1"
-                      :off-value="2">
+                      :active-value="1"
+                      :inactive-value="2">
                     </el-switch>
                 </template>
               </el-table-column>
@@ -64,7 +64,7 @@
               <el-table-column
               min-width="30%"
                 label="操作">
-                <template scope="scope">
+                <template slot-scope="scope">
                     <a class="btn" @click="handleWatch(scope.row.id)">查看</a>
                     <a class="btn" @click="handleChange(scope.row)">修改</a>
                     <a class="btn" @click="handleDelete(scope.row.id)">删除</a>

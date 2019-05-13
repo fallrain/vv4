@@ -9,13 +9,13 @@
     <div v-loading="msgListLoading">
       <el-table :data="msgListData" style="width: 100%">
         <el-table-column prop="templateName" label="序号" width="50">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ scope.$index + 1 }}
           </template>
         </el-table-column>
         <el-table-column prop="name" label="角色名称" min-width="25%"> </el-table-column>
         <el-table-column prop="enName" label="角色英文名" min-width="25%">
-          <template scope="scope">
+          <template slot-scope="scope">
             <a href="javascript:;" class="color-link" @click="editRole(scope.row.id, scope.row.groupId)">{{
               scope.row.enName
             }}</a>
@@ -24,12 +24,12 @@
         <el-table-column prop="remark" label="角色备注" min-width="25%" show-overflow-tooltip> </el-table-column>
         <el-table-column prop="crUserName" label="创建人" min-width="17%" show-overflow-tooltip> </el-table-column>
         <el-table-column prop="crTime" label="创建时间" min-width="17%">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ gUtils.dateFormat(scope.row.crTime, 'yyyy-MM-dd') }}
           </template>
         </el-table-column>
         <el-table-column label="操作" min-width="25%">
-          <template scope="scope">
+          <template slot-scope="scope">
             <a
               v-if="jurisdiction['setting:roleManager:edit']"
               href="javascript:;"

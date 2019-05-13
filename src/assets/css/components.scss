@@ -819,8 +819,8 @@
 
 .el-select-dropdown__item {
   font-size: 12px;
-  height: 30px;
-  padding: 6px 10px;
+  // height: 30px;
+  // padding: 6px 10px;
 }
 
 .el-input__icon+.el-input__inner {
@@ -838,4 +838,19 @@
 
 .el-upload__file .el-progress__text {
   top: 65px
+}
+
+.el-checkbox__inner{
+  &::after{
+    width: 4px;
+    height: 8px;
+    top: 1px;
+    left: 5px;
+  }
+}
+
+.el-table td,
+.el-table th{
+  padding: 7px 0;
+  text-align: center;
 }

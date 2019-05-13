@@ -126,7 +126,7 @@
       >
       </el-table-column>
       <el-table-column prop="level" label="星级" width="150" show-overflow-tooltip>
-        <template scope="scope">
+        <template slot-scope="scope">
           <span style="cursor:pointer;" @click="details(scope.row)">
             <img :src="scope.row.level > 0 ? './static/images/star-m.png' : './static/images/star-k.png'" alt="" />
             <img :src="scope.row.level > 1 ? './static/images/star-m.png' : './static/images/star-k.png'" alt="" />
@@ -137,7 +137,7 @@
         </template>
       </el-table-column>
       <el-table-column label="操作" min-width="120" show-overflow-tooltip>
-        <template scope="scope">
+        <template slot-scope="scope">
           <span
             @click="pingji(scope.row)"
             style="cursor:pointer;"

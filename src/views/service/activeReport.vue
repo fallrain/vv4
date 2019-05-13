@@ -22,7 +22,7 @@
           <el-table-column prop="ptMobile" label="直销员手机号" width="120"> </el-table-column>
           <el-table-column prop="shop" label="门店" width="120"> </el-table-column>
           <el-table-column label="操作">
-            <template scope="scope">
+            <template slot-scope="scope">
               <el-button @click="view(scope.row)" type="text" size="small">查看详情</el-button>
               <el-button @click="delorder(scope.row)" type="text" size="small">删除</el-button>
             </template>
@@ -54,7 +54,7 @@
         </div>
         <el-table v-loading="loading2" element-loading-text="解绑中" :data="bindingListData" border style="width: 100%">
           <el-table-column prop="userName" label="当前用户" width="165">
-            <template scope="scope">
+            <template slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="scope.row.userName" placement="top-start">
                 <span v-text="scope.row.userName"></span>
               </el-tooltip>
@@ -63,7 +63,7 @@
           <el-table-column prop="brandName" label="品牌" width="80"> </el-table-column>
           <el-table-column prop="skuCode" label="产品20位机编" width="200"> </el-table-column>
           <el-table-column prop="productModelName" label="产品型号" width="160">
-            <template scope="scope">
+            <template slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="scope.row.productModelName" placement="top-start">
                 <span v-text="scope.row.productModelName"></span>
               </el-tooltip>
@@ -73,14 +73,14 @@
           <el-table-column prop="regTime" label="产品绑定时间" width="160"> </el-table-column>
           <el-table-column prop="source" label="产品绑定渠道" width="140"> </el-table-column>
           <el-table-column prop="isOrderReg" label="是否订单上网" width="110">
-            <template scope="scope">
+            <template slot-scope="scope">
               <el-tooltip class="item" effect="dark" :content="scope.row.isOrderReg" placement="top-start">
                 <span v-text="scope.row.isOrderReg"></span>
               </el-tooltip>
             </template>
           </el-table-column>
           <el-table-column label="操作">
-            <template scope="scope">
+            <template slot-scope="scope">
               <el-button
                 v-if="
                   scope.row.isOrderReg == '否' && !(scope.row.brandName == 'casarte' || scope.row.brandName == '卡萨帝')
@@ -109,7 +109,7 @@
         <el-table-column prop="activatedFlag" label="产品绑定状态" width="120"> </el-table-column>
         <el-table-column prop="lastUpdateTime" label="产品绑定时间" width="160"> </el-table-column>
         <el-table-column label="发票详情" width="160">
-          <template scope="scope">
+          <template slot-scope="scope">
             <span v-if="scope.row.invoiceType == 1">
               <a :href="scope.row.invoiceDetail" target="_blank">
                 <img style="width: 100px;height: 100px;margin: 10px 0;" :src="scope.row.invoiceDetail" />
@@ -124,7 +124,7 @@
         <el-table-column prop="reason" label="权益名称" width="495"> </el-table-column>
         <el-table-column prop="textstatus" label="权益状态" width="167"> </el-table-column>
         <el-table-column label="操作" width="168">
-          <template scope="scope">
+          <template slot-scope="scope">
             <el-button
               v-if="scope.row.status == 1 && (getUserInfo.xwId == '' || getUserInfo.xwId == null)"
               type="text"

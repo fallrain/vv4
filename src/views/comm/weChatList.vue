@@ -25,7 +25,7 @@
     <div v-loading="msgListLoading">
       <el-table :data="msgListData.entities" style="width: 100%;text-align: center;">
         <el-table-column prop="templateName" label="序号" width="50">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ (msgListData.pageNo - 1) * msgListData.pageSize + scope.$index + 1 }}
           </template>
         </el-table-column>
@@ -34,7 +34,7 @@
           :label="msgType == '模板消息' ? '模板名称' : '图文模板名称'"
           show-overflow-tooltip
         >
-          <template scope="scope">
+          <template slot-scope="scope">
             <a href="javascript:;" @click="toDetail(scope.row.id, scope.row.msgType, 'view')" class="color-link">{{
               scope.row.templateName
             }}</a>
@@ -45,23 +45,23 @@
           :label="msgType == '模板消息' ? '模板分类' : '图文模板分类'"
           show-overflow-tooltip
         >
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ scope.row.templateType | typefilter }}
           </template>
         </el-table-column>
         <el-table-column v-if="msgType == '图文消息'" prop="templateContent" label="内容">
-          <template scope="scope">
+          <template slot-scope="scope">
             <a href="javascript:;" class="color-link" @click="view(scope.row.templateContent)">查看</a>
           </template>
         </el-table-column>
         <el-table-column prop="crUserName" label="创建人" show-overflow-tooltip> </el-table-column>
         <el-table-column prop="crTime" label="创建时间">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ gUtils.dateFormat(scope.row.crTime, 'yyyy-MM-dd') }}
           </template>
         </el-table-column>
         <el-table-column label="操作" width="160">
-          <template scope="scope">
+          <template slot-scope="scope">
             <a
               v-if="
                 jurisdiction['marketingOperations:weChatManager:graphicsEdit'] ||

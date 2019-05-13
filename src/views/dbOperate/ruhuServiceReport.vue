@@ -102,7 +102,7 @@
       <el-table-column prop="address" label="用户地址" width="120" show-overflow-tooltip> </el-table-column>
       <el-table-column prop="lastUpdateTime" label="最后维护时间" width="220" show-overflow-tooltip> </el-table-column>
       <!-- <el-table-column label="操作" min-width="120" show-overflow-tooltip>
-                <template scope="scope">
+                <template slot-scope="scope">
                     <span @click="detailsView(scope.row)" style="cursor:pointer;" >
                         <span style="color:#1fb5fc;vertical-align: middle;">查看</span>
                     </span>

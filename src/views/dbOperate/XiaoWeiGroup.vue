@@ -12,13 +12,13 @@
         <el-table-column prop="desc" label="小微组描述"> </el-table-column>
         <el-table-column prop="xwAccount" label="小微数量"> </el-table-column>
         <el-table-column label="启动状态" center prop="status">
-          <template scope="scope">
+          <template slot-scope="scope">
             <el-switch
               v-model="scope.row.status"
               on-color="#13ce66"
               off-color="#ff4949"
-              :on-value="1"
-              :off-value="0"
+              :active-value="1"
+              :inactive-value="0"
               @change="switchChange(scope.row.id, scope.row.status)"
             >
             </el-switch>
@@ -26,7 +26,7 @@
         </el-table-column>
         <el-table-column prop="crTime" label="创建时间"> </el-table-column>
         <el-table-column label="操作">
-          <template scope="scope">
+          <template slot-scope="scope">
             <a class="btn" @click="handleChange(scope.row)">修改</a>
             <a class="btn" @click="handleDelete(scope.row)">删除</a>
             <a class="btn" @click="handleManage(scope.row)">管理</a>

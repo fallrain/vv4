@@ -24,7 +24,7 @@
         </el-table-column>
         <el-table-column align="center" label="审核状态" min-width="150">
           <!--prop="audiStatusName" -->
-          <template scope="scope">
+          <template slot-scope="scope">
             <!--               <el-popover trigger="hover" placement="top" v-if="scope.row.audiStatus==0">
                 <div >
                   <p>原因: {{scope.row.audiResult}}</p>
@@ -65,7 +65,7 @@
           </template>
         </el-table-column>
         <el-table-column label="操作" min-width="300">
-          <template scope="scope">
+          <template slot-scope="scope">
             <div>
               <el-button type="text" @click="previewSurvey(scope.row)">查看</el-button>
               <el-button

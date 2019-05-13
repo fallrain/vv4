@@ -15,7 +15,7 @@
       style="width: 100%;margin-top: 15px;text-align: center;"
     >
       <el-table-column label="序号" width="80">
-        <template scope="scope">
+        <template slot-scope="scope">
           {{ (pageNo - 1) * pageSize + scope.$index + 1 }}
         </template>
       </el-table-column>
@@ -23,7 +23,7 @@
       <el-table-column prop="price" label="权益券价格（元）" width="180" :show-overflow-tooltip="true">
       </el-table-column>
       <el-table-column label="点击券跳转链接" width="180" :show-overflow-tooltip="true">
-        <template scope="scope">
+        <template slot-scope="scope">
           <a style="color: #20a0ff;" :href="scope.row.cardUrl" target="_blank" v-if="scope.row.useType == 0">{{
             scope.row.cardUrl
           }}</a>
@@ -33,26 +33,26 @@
         </template>
       </el-table-column>
       <el-table-column label="上下架" width="180">
-        <template scope="scope">
+        <template slot-scope="scope">
           <el-switch
             v-if="scope.row.status == 1 || scope.row.status == 2"
             v-model="scope.row.status"
             on-color="#13ce66"
             off-color="#ff4949"
-            :on-value="1"
-            :off-value="2"
+            :active-value="1"
+            :inactive-value="2"
             @change="switchChange(scope.row.id, scope.row.status)"
           >
           </el-switch>
         </template>
       </el-table-column>
       <el-table-column label="查看详情" width="180">
-        <template scope="scope">
+        <template slot-scope="scope">
           <el-button type="text" @click="seedetails(scope.row)">查看详情</el-button>
         </template>
       </el-table-column>
       <el-table-column prop="sort" label="操作">
-        <template scope="scope">
+        <template slot-scope="scope">
           <el-button type="text" @click="modify(scope.row.id)" v-if="scope.row.status == 2">修改</el-button>
           <a href="javascript:;" @click="statusdelete(scope.row.id)" v-if="scope.row.status == 2">删除</a>
         </template>

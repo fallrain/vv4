@@ -19,7 +19,7 @@
             <el-table-column type="selection" width="55"> </el-table-column>
             <el-table-column prop="rightsName" label="权益名称" min-width="18%"> </el-table-column>
             <el-table-column prop="time" label="有效期" min-width="40%">
-              <template scope="scope">
+              <template slot-scope="scope">
                 <!-- <el-radio-group v-model="scope.row.useFrequency"> -->
                 <!-- <el-radio :label="1">不限</el-radio> -->
                 <!-- <el-radio :label="-1"> -->
@@ -46,7 +46,7 @@
               min-width="40%"
               @selection-change="rightHandleSelectionChange"
             >
-              <template scope="scope">
+              <template slot-scope="scope">
                 <!-- <el-radio-group v-model="rank.useFrequency"> -->
                 <!-- <el-radio :label="1">不限</el-radio> -->
                 <!-- <el-radio :label="-1"> -->
@@ -90,7 +90,7 @@
             <el-table-column type="selection" width="55"> </el-table-column>
             <el-table-column prop="rightsName" label="权益名称" min-width="18%"> </el-table-column>
             <el-table-column prop="time" label="有效期" min-width="40%">
-              <template scope="scope">
+              <template slot-scope="scope">
                 <!-- <el-radio-group v-model="scope.row.useFrequency"> -->
                 <!-- <el-radio :label="1">不限</el-radio> -->
                 <!-- <el-radio :label="-1"> -->
@@ -112,7 +112,7 @@
               </template>
             </el-table-column>
             <el-table-column prop="time" label="使用频率" min-width="40%">
-              <template scope="scope">
+              <template slot-scope="scope">
                 <!-- <el-radio-group v-model="rank.useFrequency"> -->
                 <!-- <el-radio :label="1">不限</el-radio> -->
                 <!-- <el-radio :label="-1"> -->

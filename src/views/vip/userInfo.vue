@@ -197,24 +197,24 @@
           <div v-loading="rightLoading">
             <el-table :data="rightList.entities" style="width: 100%">
               <el-table-column prop="templateName" label="序号" width="50">
-                <template scope="scope">
+                <template slot-scope="scope">
                   {{ scope.$index + 1 }}
                 </template>
               </el-table-column>
               <el-table-column prop="brandName" label="权益名称" min-width="9%"> </el-table-column>
               <el-table-column prop="regTime" label="截止时间" min-width="18%" show-overflow-tooltip>
-                <template scope="scope">
+                <template slot-scope="scope">
                   {{ gUtils.dateFormat(scope.row.regTime, 'yyyy-MM-dd') }}
                 </template>
               </el-table-column>
               <el-table-column prop="channelName" label="状态" min-width="9%" show-overflow-tooltip> </el-table-column>
               <el-table-column prop="regTime" label="操作日期" min-width="18%" show-overflow-tooltip>
-                <template scope="scope">
+                <template slot-scope="scope">
                   {{ gUtils.dateFormat(scope.row.regTime, 'yyyy-MM-dd') }}
                 </template>
               </el-table-column>
               <!-- <el-table-column label="操作" min-width="9%"> -->
-              <!-- <template scope="scope"> -->
+              <!-- <template slot-scope="scope"> -->
               <!-- <a v-if="jurisdiction['member:memberGroupManger:update']" href="javascript:;" class="operation-btn" @click="toDetail(scope.row.hrUserId)"><i class="iconfont icon-xiugai"></i>查看</a> -->
               <!-- <a v-if="jurisdiction['member:memberGroupManger:delete']" href="javascript:;" class="color-link operation-btn" @click="deleteTpl(scope.row.id)"><i class="iconfont icon-shanchu-copy"></i>删除</a> -->
               <!-- </template> -->
@@ -228,7 +228,7 @@
           <div v-loading="goodsLoading">
             <el-table :data="regProductInfo.entities" style="width: 100%">
               <el-table-column prop="templateName" label="序号" width="50">
-                <template scope="scope">
+                <template slot-scope="scope">
                   {{ (regProductPager.pageNo - 1) * regProductPager.pageSize + scope.$index + 1 }}
                 </template>
               </el-table-column>
@@ -237,7 +237,7 @@
               <el-table-column prop="productCode" label="产品型号" min-width="18%"> </el-table-column>
               <el-table-column prop="skuCode" label="成品编码" min-width="18%" show-overflow-tooltip> </el-table-column>
               <el-table-column prop="regTime" label="注册日期" min-width="18%" show-overflow-tooltip>
-                <template scope="scope">
+                <template slot-scope="scope">
                   {{ gUtils.dateFormat(scope.row.regTime, 'yyyy-MM-dd') }}
                 </template>
               </el-table-column>
@@ -246,7 +246,7 @@
               <el-table-column prop="buyPrice" label="参考价格" min-width="10%" show-overflow-tooltip>
               </el-table-column>
               <!-- <el-table-column label="操作" min-width="9%"> -->
-              <!-- <template scope="scope"> -->
+              <!-- <template slot-scope="scope"> -->
               <!-- <a v-if="jurisdiction['member:memberGroupManger:update']" href="javascript:;" class="operation-btn" @click="toDetail(scope.row.hrUserId)"><i class="iconfont icon-xiugai"></i>查看</a> -->
               <!-- <a v-if="jurisdiction['member:memberGroupManger:delete']" href="javascript:;" class="color-link operation-btn" @click="deleteTpl(scope.row.id)"><i class="iconfont icon-shanchu-copy"></i>删除</a> -->
               <!-- </template> -->
@@ -269,19 +269,19 @@
           <div v-loading="vipLoading">
             <el-table :data="integralDetail.data" style="width: 100%">
               <el-table-column prop="templateName" label="序号" width="50">
-                <template scope="scope">
+                <template slot-scope="scope">
                   {{ (integralDetailPager.pageNo - 1) * integralDetailPager.pageSize + scope.$index + 1 }}
                 </template>
               </el-table-column>
               <el-table-column prop="pointLable" label="动作"> </el-table-column>
               <el-table-column prop="updatedAt" label="交互日期">
-                <template scope="scope">
+                <template slot-scope="scope">
                   {{ gUtils.dateFormat(scope.row.updatedAt, 'yyyy-MM-dd') }}
                 </template>
               </el-table-column>
               <el-table-column prop="channelName" label="交互渠道"> </el-table-column>
               <el-table-column prop="score" label="操作" show-overflow-tooltip>
-                <template scope="scope">
+                <template slot-scope="scope">
                   <span v-if="scope.row.score > 0">+{{ scope.row.score }}分</span>
                   <span v-if="scope.row.score <= 0">{{ scope.row.score }}分</span>
                 </template>
@@ -304,7 +304,7 @@
           <div v-loading="vipLoading">
             <el-table :data="integralDetail.entities" style="width: 100%">
               <el-table-column prop="templateName" label="序号" width="50">
-                <template scope="scope">
+                <template slot-scope="scope">
                   {{ (integralDetailPager.pageNo - 1) * integralDetailPager.pageSize + scope.$index + 1 }}
                 </template>
               </el-table-column>
@@ -312,7 +312,7 @@
               <el-table-column prop="happenTime" label="交互日期"> </el-table-column>
               <el-table-column prop="outType" label="交互渠道"> </el-table-column>
               <el-table-column prop="scoreValue" label="操作" show-overflow-tooltip>
-                <template scope="scope">
+                <template slot-scope="scope">
                   <span>{{ scope.row.scoreValue }}分</span>
                 </template>
               </el-table-column>
@@ -334,13 +334,13 @@
           <div v-loading="rankLoading">
             <el-table :data="rankHistory.entities" style="width: 100%">
               <el-table-column prop="templateName" label="序号" width="50">
-                <template scope="scope">
+                <template slot-scope="scope">
                   {{ scope.$index + 1 }}
                 </template>
               </el-table-column>
               <el-table-column prop="newRankName" label="会员等级" min-width="50%"> </el-table-column>
               <el-table-column prop="startTime" label="生效日期" min-width="50%">
-                <template scope="scope">
+                <template slot-scope="scope">
                   {{ gUtils.dateFormat(scope.row.startTime, 'yyyy-MM-dd') }}
                 </template>
               </el-table-column>

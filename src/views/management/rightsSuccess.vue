@@ -167,26 +167,6 @@ export default {
 }
 </style>
 <style>
-.detail-dialog .el-dialog__header p {
-  padding: 0;
-}
-.detail-dialog .el-dialog {
-  width: 820px;
-}
-.detail-dialog .el-dialog__body {
-  padding-top: 4px;
-}
-.el-table th,
-.el-table th div {
-  background: #e0f0ff;
-  font-weight: normal;
-}
-.el-table__body-wrapper tr:nth-child(odd) {
-}
-.el-table__body-wrapper tr:nth-child(even) {
-  background: #f6f6f6;
-}
-
 .reject-dialog .el-dialog {
   width: 398px;
 }

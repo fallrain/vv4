@@ -38,7 +38,7 @@
       <el-table-column prop="url" label="链接" width="200"> </el-table-column>
       <el-table-column prop="teststatus" label="状态" width="100"> </el-table-column>
       <el-table-column prop="name" label="操作">
-        <template scope="scope">
+        <template slot-scope="scope">
           <a href="javascript:;" @click="changestatus(scope.row)" v-if="scope.row.status == 2" class="operation-btn"
             ><i class="iconfont icon-zanting"></i>开始</a
           >

@@ -74,7 +74,7 @@
     <div v-loading="msgListLoading" style="margin-top: 20px;text-align: center;">
       <el-table border :data="msgListData.entities" style="width: 100%">
         <el-table-column prop="templateName" label="序号" width="50">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ (msgListData.pageNo - 1) * msgListData.pageSize + scope.$index + 1 }}
           </template>
         </el-table-column>
@@ -82,7 +82,7 @@
         <el-table-column prop="userName" label="登录名" width="120" :show-overflow-tooltip="true"> </el-table-column>
         <el-table-column prop="mobile" label="电话" width="120" :show-overflow-tooltip="true"> </el-table-column>
         <el-table-column label="购买区域" width="180">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ scope.row.province }} {{ scope.row.city }} {{ scope.row.district }}
           </template>
         </el-table-column>
@@ -93,14 +93,14 @@
         <el-table-column prop="rejectReason" label="驳回原因" width="120" :show-overflow-tooltip="true">
         </el-table-column>
         <el-table-column label="详情" width="100">
-          <template scope="scope">
+          <template slot-scope="scope">
             <a href="javascript:;" class="operation-btn color-link" @click="detail(scope.row.id, scope.row)">
               <i class="iconfont icon-chakan"></i>查看</a
             >
           </template>
         </el-table-column>
         <el-table-column label="操作" min-width="200" style="position: relative">
-          <template scope="scope">
+          <template slot-scope="scope">
             <span v-if="scope.row.assignStatus == null && scope.row.auditStatus == '1'">已通过</span>
             <span v-if="scope.row.assignStatus == null && scope.row.auditStatus == '2'">已驳回</span>
             <el-tooltip

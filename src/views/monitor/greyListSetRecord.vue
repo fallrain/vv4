@@ -114,7 +114,7 @@
           :formatter="formatterStatus"
         ></el-table-column>
         <el-table-column label="冻结时间" width="220" show-overflow-tooltip :formatter="formatterTime">
-          <!-- <template scope="scope">
+          <!-- <template slot-scope="scope">
                 <span >{{scope.row.frozenBeginTime}},{{scope.row.frozenEndTime}}</span>
           </template>    -->
         </el-table-column>

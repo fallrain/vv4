@@ -50,7 +50,7 @@
             <div style="margin-top:20px;">
               <el-table :data="vipCostMsgListData.entities" style="width: 100%">
                 <el-table-column prop="countDate" label="时间" min-width="50%">
-                  <template scope="scope">
+                  <template slot-scope="scope">
                     <div>{{ gUtils.dateFormat(scope.row.countDate, 'yyyy-MM-dd') }}</div>
                   </template>
                 </el-table-column>
@@ -114,7 +114,7 @@
             <div style="margin-top:20px;">
               <el-table :data="vipCostMsgListData.entities" style="width: 100%">
                 <el-table-column prop="countDate" label="时间" min-width="50%">
-                  <template scope="scope">
+                  <template slot-scope="scope">
                     <div>{{ gUtils.dateFormat(scope.row.countDate, 'yyyy-MM-dd') }}</div>
                   </template>
                 </el-table-column>
@@ -178,7 +178,7 @@
             <div style="margin-top:20px;">
               <el-table :data="vipCostMsgListData.entities" style="width: 100%">
                 <el-table-column prop="countDate" label="时间" min-width="20%">
-                  <template scope="scope">
+                  <template slot-scope="scope">
                     <div>{{ gUtils.dateFormat(scope.row.countDate, 'yyyy-MM-dd') }}</div>
                   </template>
                 </el-table-column>

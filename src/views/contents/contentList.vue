@@ -35,7 +35,7 @@
     <div v-loading="msgListLoading">
       <el-table :data="msgListData.entities" style="width: 100%">
         <el-table-column prop="templateName" label="序号" width="50">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ (msgListData.pageNo - 1) * msgListData.pageSize + scope.$index + 1 }}
           </template>
         </el-table-column>
@@ -43,30 +43,30 @@
         <el-table-column prop="brief" label="简介" width="200" show-overflow-tooltip> </el-table-column>
         <el-table-column prop="author" label="作者" width="150" show-overflow-tooltip> </el-table-column>
         <el-table-column label="PC模式">
-          <template scope="scope">
+          <template slot-scope="scope">
             <a href="javascript:;" class="color-link operation-btn" @click="view(scope.row)">查看</a>
           </template>
         </el-table-column>
         <el-table-column v-if="subColumnId != 1 && subColumnId != 2" label="手机模式">
-          <template scope="scope">
+          <template slot-scope="scope">
             <a href="javascript:;" class="color-link operation-btn" @click="qrcode(scope.row.id)">查看</a>
           </template>
         </el-table-column>
         <el-table-column v-if="columnId == 1" prop="status" label="是否推荐">
-          <template scope="scope">
+          <template slot-scope="scope">
             <el-switch
               v-model="scope.row.type"
               on-color="#13ce66"
               off-color="#ff4949"
-              :on-value="3"
-              :off-value="6"
+              :active-value="3"
+              :inactive-value="6"
               @change="switchChange(scope.row.id, scope.row.type)"
             >
             </el-switch>
           </template>
         </el-table-column>
         <el-table-column label="操作" width="200">
-          <template scope="scope">
+          <template slot-scope="scope">
             <a href="javascript:;" class="color-link operation-btn" @click="toDetail(scope.row.id)"
               ><i class="iconfont icon-xiugai"></i>修改</a
             >

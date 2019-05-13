@@ -17,7 +17,7 @@
       <el-table-column prop="recruitNum" label="认筹数量" width="200"> </el-table-column>
       <el-table-column prop="convertNum" label="转化订单" width="200"> </el-table-column>
       <el-table-column prop="sort" label="操作">
-        <template scope="scope">
+        <template slot-scope="scope">
           <el-button type="text" v-if="">查看</el-button>
           <el-button type="text" v-if="">统计</el-button>
         </template>

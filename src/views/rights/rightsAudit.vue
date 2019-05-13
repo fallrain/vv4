@@ -9,14 +9,14 @@
     <div v-if="!isChian">
       <el-table :data="msgListData.entities" border v-loading="msgListLoading">
         <el-table-column prop="templateName" label="序号" width="50">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ (msgListData.pageNo - 1) * msgListData.pageSize + scope.$index + 1 }}
           </template>
         </el-table-column>
         <el-table-column prop="userName" label="创建者" width="120" show-overflow-tooltip> </el-table-column>
         <el-table-column prop="rightName" label="权益活动名称" show-overflow-tooltip> </el-table-column>
         <el-table-column prop="startTime" label="权益活动有效期" width="190">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ scope.row.startTime | dateFilter }} - {{ scope.row.endTime | dateFilter | endTimeFilter }}
           </template>
         </el-table-column>
@@ -24,12 +24,12 @@
         <el-table-column prop="xiaoweiName" label="小微" show-overflow-tooltip> </el-table-column>
         <el-table-column prop="channelName" label="渠道" show-overflow-tooltip> </el-table-column>
         <el-table-column prop="time" label="详情" show-overflow-tooltip>
-          <template scope="scope">
+          <template slot-scope="scope">
             <a href="javascript:;" class="color-link" @click="reviewDetail(scope)">查看详情</a>
           </template>
         </el-table-column>
         <el-table-column prop="status" label="状态">
-          <template scope="scope">
+          <template slot-scope="scope">
             <el-popover
               trigger="hover"
               placement="top"
@@ -130,7 +130,7 @@
           </template>
         </el-table-column>
         <el-table-column label="操作">
-          <template scope="scope">
+          <template slot-scope="scope">
             <a
               v-if="scope.row.editSign == 1 && pass"
               href="javascript:;"
@@ -166,14 +166,14 @@
         <el-tab-pane label="中国区独立配置" name="first">
           <el-table :data="msgListData.entities" border>
             <el-table-column prop="templateName" label="序号" width="50">
-              <template scope="scope">
+              <template slot-scope="scope">
                 {{ (msgListData.pageNo - 1) * msgListData.pageSize + scope.$index + 1 }}
               </template>
             </el-table-column>
             <el-table-column prop="userName" label="创建者" width="120" show-overflow-tooltip> </el-table-column>
             <el-table-column prop="rightName" label="权益活动名称" show-overflow-tooltip> </el-table-column>
             <el-table-column prop="startTime" label="权益活动有效期" width="190">
-              <template scope="scope">
+              <template slot-scope="scope">
                 {{ scope.row.startTime | dateFilter }} - {{ scope.row.endTime | dateFilter | endTimeFilter }}
               </template>
             </el-table-column>
@@ -181,12 +181,12 @@
             <el-table-column prop="xiaoweiName" label="小微" show-overflow-tooltip> </el-table-column>
             <el-table-column prop="channelName" label="渠道" show-overflow-tooltip> </el-table-column>
             <el-table-column prop="time" label="详情" show-overflow-tooltip>
-              <template scope="scope">
+              <template slot-scope="scope">
                 <a href="javascript:;" class="color-link" @click="reviewDetail(scope)">查看详情</a>
               </template>
             </el-table-column>
             <el-table-column prop="status" label="状态">
-              <template scope="scope">
+              <template slot-scope="scope">
                 <el-popover
                   trigger="hover"
                   placement="top"
@@ -289,7 +289,7 @@
               </template>
             </el-table-column>
             <el-table-column label="操作">
-              <template scope="scope">
+              <template slot-scope="scope">
                 <a
                   v-if="scope.row.editSign == 1 && pass"
                   href="javascript:;"
@@ -323,14 +323,14 @@
         <el-tab-pane label="中国区小微联合配置" name="second">
           <el-table :data="msgChinaListData.entities" border>
             <el-table-column prop="templateName" label="序号" width="50">
-              <template scope="scope">
+              <template slot-scope="scope">
                 {{ (msgChinaListData.pageNo - 1) * msgChinaListData.pageSize + scope.$index + 1 }}
               </template>
             </el-table-column>
             <el-table-column prop="userName" label="创建者" width="120" show-overflow-tooltip> </el-table-column>
             <el-table-column prop="rightName" label="权益活动名称" show-overflow-tooltip> </el-table-column>
             <el-table-column prop="startTime" label="权益活动有效期" width="190">
-              <template scope="scope">
+              <template slot-scope="scope">
                 {{ scope.row.startTime | dateFilter }} - {{ scope.row.endTime | dateFilter | endTimeFilter }}
               </template>
             </el-table-column>
@@ -338,12 +338,12 @@
             <el-table-column prop="xiaoweiName" label="小微" show-overflow-tooltip> </el-table-column>
             <el-table-column prop="channelName" label="渠道" show-overflow-tooltip> </el-table-column>
             <el-table-column prop="time" label="详情" show-overflow-tooltip>
-              <template scope="scope">
+              <template slot-scope="scope">
                 <a href="javascript:;" class="color-link" @click="reviewChinaDetail(scope)">查看详情</a>
               </template>
             </el-table-column>
             <el-table-column prop="status" label="状态">
-              <template scope="scope">
+              <template slot-scope="scope">
                 <el-popover
                   trigger="hover"
                   placement="top"
@@ -431,7 +431,7 @@
               </template>
             </el-table-column>
             <el-table-column label="操作">
-              <template scope="scope">
+              <template slot-scope="scope">
                 <a
                   v-if="scope.row.status == 1 || scope.row.status == 2"
                   href="javascript:;"
@@ -2163,30 +2163,5 @@ export default {
 }
 </style>
 <style>
-.detail-dialog .el-dialog__header p {
-  padding: 0;
-}
-.detail-dialog .el-dialog {
-  width: 820px;
-}
-.detail-dialog .el-dialog__body {
-  padding-top: 4px;
-}
-.el-table th,
-.el-table th div {
-  background: #e0f0ff;
-  font-weight: normal;
-}
-.el-table__body-wrapper tr:nth-child(odd) {
-}
-.el-table__body-wrapper tr:nth-child(even) {
-  background: #f6f6f6;
-}
 
-.reject-dialog .el-dialog {
-  width: 398px;
-}
-.el-tooltip__popper {
-  max-width: 600px;
-}
 </style>

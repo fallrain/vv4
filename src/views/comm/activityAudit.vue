@@ -42,49 +42,49 @@
             </el-table-column> -->
 
         <el-table-column prop="templateName" label="序号" width="50">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ (msgListData.pageNo - 1) * msgListData.pageSize + scope.$index + 1 }}
           </template>
         </el-table-column>
         <el-table-column prop="activityName" label="活动名称" show-overflow-tooltip> </el-table-column>
         <!-- <el-table-column prop="activityDesc" label="描述" show-overflow-tooltip> </el-table-column> -->
         <el-table-column prop="fixCommunicationTime" label="活动时间" width="180" show-overflow-tooltip>
-          <template scope="scope">
+          <template slot-scope="scope">
             <span v-if="scope.row.fixNum == 1">{{ scope.row.fixCommunicationTime }}</span>
             <span v-if="scope.row.fixNum == -1">{{ scope.row.unSetCommunicationTime }}</span>
           </template>
         </el-table-column>
         <el-table-column prop="crUserName" label="创建人" show-overflow-tooltip> </el-table-column>
         <el-table-column prop="crTime" label="创建时间" show-overflow-tooltip>
-          <template scope="scope">
+          <template slot-scope="scope">
             <div>{{ gUtils.dateFormat(scope.row.crTime, 'yyyy-MM-dd') }}</div>
           </template>
         </el-table-column>
         <el-table-column prop="fixNum" label="沟通频率">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ scope.row.fixNum | fixNumFilter }}
           </template>
         </el-table-column>
         <el-table-column prop="duo" label="多波次"> </el-table-column>
         <el-table-column prop="filterInfo" label="参加人数">
-          <template scope="scope">
+          <template slot-scope="scope">
             <div v-if="userNumLoading" v-loading="userNumLoading" style="position: initial;height:35px;"></div>
             <div v-if="!userNumLoading">{{ scope.row.filterInfo.userNum }}</div>
           </template>
         </el-table-column>
         <el-table-column prop="configFlag" label="详情">
-          <template scope="scope">
+          <template slot-scope="scope">
             <a href="javascript:;" class="color-link" @click="reviewActivity(scope.row)">查看</a>
           </template>
         </el-table-column>
 
         <el-table-column prop="status" label="状态">
-          <template scope="scope">
+          <template slot-scope="scope">
             <p v-html="statusFilter(scope.row.status)"></p>
           </template>
         </el-table-column>
         <el-table-column label="操作" width="200">
-          <template scope="scope">
+          <template slot-scope="scope">
             <a
               v-if="jurisdiction['marketingOperations:activityManager:edit'] && scope.row.status == -7"
               href="javascript:;"

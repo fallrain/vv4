@@ -21,17 +21,17 @@
     <div v-loading="msgListLoading">
       <el-table :data="msgListData.entities" style="width: 100%" border>
         <el-table-column prop="templateName" label="序号" width="50">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ (msgListData.pageNo - 1) * msgListData.pageSize + scope.$index + 1 }}
           </template>
         </el-table-column>
         <el-table-column prop="employeeNumber" label="用户工号">
-          <template scope="scope">
+          <template slot-scope="scope">
             <span v-html="scope.row.employeeNumber"></span>
           </template>
         </el-table-column>
         <el-table-column prop="userName" label="用户名">
-          <template scope="scope">
+          <template slot-scope="scope">
             <a
               href="javascript:;"
               class="color-link"
@@ -46,19 +46,19 @@
         <el-table-column prop="userFrom" label="用户来源" show-overflow-tooltip> </el-table-column>
         <el-table-column prop="crUserName" label="创建人" show-overflow-tooltip> </el-table-column>
         <el-table-column prop="crTime" label="创建时间">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ gUtils.dateFormat(scope.row.crTime, 'yyyy-MM-dd') }}
           </template>
         </el-table-column>
         <el-table-column label="最后登录时间">
-          <template scope="scope">
+          <template slot-scope="scope">
             <p v-if="scope.row.lastLoginTime != null && scope.row.lastLoginTime != ''">
               {{ gUtils.dateFormat(scope.row.lastLoginTime, 'yyyy-MM-dd') }}
             </p>
           </template>
         </el-table-column>
         <el-table-column label="操作" width="150">
-          <template scope="scope">
+          <template slot-scope="scope">
             <a
               v-if="jurisdiction['setting:userManager:edit'] && scope.row.delFlag == 0"
               href="javascript:;"

@@ -24,13 +24,13 @@
             ></el-input>
             <el-table :data="tableData" border style="width: 100%;margin-top: 15px;">
               <el-table-column label="序号" width="50">
-                <template scope="scope">
+                <template slot-scope="scope">
                   {{ (pageNo - 1) * pageSize + scope.$index + 1 }}
                 </template>
               </el-table-column>
               <el-table-column prop="title" label="任务名称" width="120" show-overflow-tooltip> </el-table-column>
               <el-table-column label="用户范围" width="100" show-overflow-tooltip>
-                <template scope="scope">
+                <template slot-scope="scope">
                   <el-tooltip
                     v-if="scope.row.type == 1"
                     class="item"
@@ -57,12 +57,12 @@
               <el-table-column prop="crTime" label="发送时间" width="150" show-overflow-tooltip> </el-table-column>
               <el-table-column prop="textStatus" label="状态" width="80"> </el-table-column>
               <el-table-column label="效果分析" width="80">
-                <template scope="scope">
+                <template slot-scope="scope">
                   <el-button type="text" @click="analysis(scope.row)">分析</el-button>
                 </template>
               </el-table-column>
               <el-table-column label="操作" min-width="50">
-                <template scope="scope">
+                <template slot-scope="scope">
                   <el-button type="text" v-if="scope.row.status == 0" @click="updateTaskStatus(scope.row, 3)"
                     >停止</el-button
                   >
@@ -131,12 +131,12 @@
     <el-dialog title="用户范围" :visible.sync="fileLockDialog" size="tiny" :modal-append-to-body="false">
       <el-table :data="fileLockData" style="width: 100%" border>
         <el-table-column label="序号" width="80">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ scope.$index + 1 }}
           </template>
         </el-table-column>
         <el-table-column label="openId" min-width="180">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ scope.row }}
           </template>
         </el-table-column>

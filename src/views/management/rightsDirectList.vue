@@ -33,7 +33,7 @@
         <el-table-column prop="startTime" label="权益生效期" width="180"> </el-table-column>
         <el-table-column prop="endTime" label="权益失效期" width="180"> </el-table-column>
         <el-table-column label="状态" width="180">
-          <template scope="scope">
+          <template slot-scope="scope">
             <el-popover trigger="hover" placement="top" v-if="scope.row.status == 1">
               <div class="schedule-linebox02">
                 <ul class="m-ul">
@@ -68,12 +68,12 @@
           </template>
         </el-table-column>
         <el-table-column label="详情" width="180">
-          <template scope="scope">
+          <template slot-scope="scope">
             <el-button type="text" @click="seedetails(scope.row)">查看详情</el-button>
           </template>
         </el-table-column>
         <el-table-column label="操作">
-          <template scope="scope">
+          <template slot-scope="scope">
             <el-button
               type="text"
               v-if="scope.row.status == 5 || scope.row.status == 6"

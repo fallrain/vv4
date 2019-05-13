@@ -24,7 +24,7 @@
         <el-table-column type="selection" width="55"> </el-table-column>
         <el-table-column prop="groupName" label="分组名称" min-width="99%"> </el-table-column>
         <!-- <el-table-column prop="userList" label="人数" min-width="25%">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{scope.row.userList.length}}
           </template>
         </el-table-column>

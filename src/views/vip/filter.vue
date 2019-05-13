@@ -617,7 +617,7 @@
       <div>
         <el-table :data="msgListData.entities" style="width: 100%">
           <el-table-column prop="templateName" label="序号" width="50">
-            <template scope="scope">
+            <template slot-scope="scope">
               {{ (msgListData.pageNo - 1) * msgListData.pageSize + scope.$index + 1 }}
             </template>
           </el-table-column>
@@ -625,12 +625,12 @@
           <el-table-column v-if="isOnline" prop="rankName" label="会员级别"> </el-table-column>
           <el-table-column prop="mobile" label="手机号"> </el-table-column>
           <el-table-column v-if="isOnline" prop="email" label="邮箱">
-            <template scope="scope">
+            <template slot-scope="scope">
               {{ scope.row.email }}
             </template>
           </el-table-column>
           <el-table-column v-if="isOnline" label="操作">
-            <template scope="scope">
+            <template slot-scope="scope">
               <!-- @click="toDetail(scope.row.userId)" -->
               <a
                 v-if="jurisdiction['member:memberManager:query']"

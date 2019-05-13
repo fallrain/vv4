@@ -9,17 +9,17 @@
     </div>
     <el-table v-loading="loading" :data="tableData" border style="width: 100%;text-align: center;">
       <el-table-column label="图片" width="300">
-        <template scope="scope">
+        <template slot-scope="scope">
           <img style="width: 100px;height: 100px;margin: 10px 0;" :src="scope.row.imageUrl" />
         </template>
       </el-table-column>
       <el-table-column label="有效期" width="400">
-        <template scope="scope">
+        <template slot-scope="scope">
           <p>{{ scope.row.startTime }} - {{ scope.row.endTime }}</p>
         </template>
       </el-table-column>
       <el-table-column label="操作">
-        <template scope="scope">
+        <template slot-scope="scope">
           <el-button @click="view(scope.row.id)" type="text">修改</el-button>
           <el-button @click="deletered(scope.row.id)" type="text">删除</el-button>
         </template>

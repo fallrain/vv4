@@ -74,19 +74,19 @@
       <el-table-column prop="hmcId" label="直销员工号" width="130" show-overflow-tooltip> </el-table-column>
       <el-table-column prop="hmcName" label="直销员姓名" width="130" show-overflow-tooltip> </el-table-column>
       <el-table-column label="附件" width="130">
-        <template scope="scope">
+        <template slot-scope="scope">
           <el-button type="text" @click="preview(scope.row.videoLink)" v-if="scope.row.videoLink">点击预览</el-button>
         </template>
       </el-table-column>
       <el-table-column prop="textstatus" label="状态" width="130"> </el-table-column>
       <el-table-column label="上下架" width="130">
-        <template scope="scope">
+        <template slot-scope="scope">
           <el-switch
             v-model="scope.row.status"
             on-color="#13ce66"
             off-color="#ff4949"
-            :on-value="1"
-            :off-value="2"
+            :active-value="1"
+            :inactive-value="2"
             @change="switchChange(scope.row.id, scope.row.status)"
           >
           </el-switch>
@@ -96,12 +96,12 @@
       <el-table-column prop="lastUpdateUserName" label="最后操作人" width="130" show-overflow-tooltip>
       </el-table-column>
       <el-table-column label="详情" width="130">
-        <template scope="scope">
+        <template slot-scope="scope">
           <el-button type="text" @click="detailsView(scope.row)">查看详情</el-button>
         </template>
       </el-table-column>
       <el-table-column label="操作" min-width="130">
-        <template scope="scope">
+        <template slot-scope="scope">
           <el-button @click="view(scope.row.id)" type="text" v-if="scope.row.status == 2">修改</el-button>
           <el-button @click="deletered(scope.row.id)" type="text" v-if="scope.row.status != 1">删除</el-button>
         </template>

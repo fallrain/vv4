@@ -13,24 +13,24 @@
     <div v-loading="msgListLoading">
       <el-table :data="msgListData.entities" style="width: 100%;text-align: center;">
         <el-table-column prop="templateName" label="序号" width="50">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ (msgListData.pageNo - 1) * msgListData.pageSize + scope.$index + 1 }}
           </template>
         </el-table-column>
         <el-table-column prop="groupName" label="分组名称" min-width="15%" show-overflow-tooltip> </el-table-column>
         <el-table-column prop="groupDesc" label="分组描述" min-width="18%" show-overflow-tooltip> </el-table-column>
         <el-table-column prop="startTime" label="生效时间" min-width="12%">
-          <template scope="scope">
+          <template slot-scope="scope">
             <div>{{ gUtils.dateFormat(scope.row.startTime, 'yyyy-MM-dd') | startTimeDate }}</div>
           </template>
         </el-table-column>
         <el-table-column prop="endTime" label="失效时间" min-width="12%">
-          <template scope="scope">
+          <template slot-scope="scope">
             <div>{{ gUtils.dateFormat(scope.row.endTime, 'yyyy-MM-dd') | endTimeDate }}</div>
           </template>
         </el-table-column>
         <el-table-column prop="endTime" label="分组人员" min-width="12%">
-          <template scope="scope">
+          <template slot-scope="scope">
             <a
               v-if="jurisdiction['member:memberGroupManager:query']"
               href="javascript:;"
@@ -42,12 +42,12 @@
         </el-table-column>
         <el-table-column prop="crUserName" label="创建人" min-width="12%" show-overflow-tooltip> </el-table-column>
         <el-table-column prop="crTime" label="创建时间" min-width="12%" show-overflow-tooltip>
-          <template scope="scope">
+          <template slot-scope="scope">
             <div>{{ gUtils.dateFormat(scope.row.crTime, 'yyyy-MM-dd') }}</div>
           </template>
         </el-table-column>
         <el-table-column label="操作" min-width="18%">
-          <template scope="scope">
+          <template slot-scope="scope">
             <a
               v-if="jurisdiction['member:memberGroupManager:update']"
               href="javascript:;"

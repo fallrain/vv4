@@ -17,7 +17,7 @@
       <el-table-column align="center" prop="serviceFlowDesc" show-overflow-tooltip label="业务流描述" width="400">
       </el-table-column>
       <el-table-column label="操作">
-        <template scope="scope">
+        <template slot-scope="scope">
           <div>
             <el-button type="text" @click="previewSurvey(scope.row)">查看</el-button>
             <el-button type="text" @click="modify(scope.row)">修改</el-button>

@@ -87,7 +87,7 @@
             <el-table-column prop="mobile" label="手机号" min-width="21%" show-overflow-tooltip> </el-table-column>
             <el-table-column prop="email" label="邮箱" min-width="19%" show-overflow-tooltip> </el-table-column>
             <el-table-column label="操作" min-width="12%">
-              <template scope="scope">
+              <template slot-scope="scope">
                 <a
                   v-if="jurisdiction['setting:roleManager:deleteUser']"
                   href="javascript:;"

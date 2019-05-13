@@ -17,34 +17,34 @@
     <div v-loading="msgListLoading">
       <el-table :data="msgListData.entities" style="width: 100%" :row-class-name="listRowClass">
         <el-table-column prop="templateName" label="序号" width="50">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ (msgListData.pageNo - 1) * msgListData.pageSize + scope.$index + 1 }}
           </template>
         </el-table-column>
         <el-table-column prop="cardName" label="优惠券名称"> </el-table-column>
         <el-table-column prop="status" label="是否上架">
-          <!-- <template scope="scope">
+          <!-- <template slot-scope="scope">
                     {{scope.row.status | statusFilter}}
                 </template> -->
-          <template scope="scope">
+          <template slot-scope="scope">
             <el-switch
               v-model="scope.row.status"
               on-color="#13ce66"
               off-color="#ff4949"
-              :on-value="1"
-              :off-value="2"
+              :active-value="1"
+              :inactive-value="2"
               @change="switchChange(scope.row.id, scope.row.status)"
             >
             </el-switch>
           </template>
         </el-table-column>
         <el-table-column prop="configFlag" label="详情">
-          <template scope="scope">
+          <template slot-scope="scope">
             <a href="javascript:;" class="color-link" @click="review(scope.row)">查看</a>
           </template>
         </el-table-column>
         <el-table-column label="操作">
-          <template scope="scope">
+          <template slot-scope="scope">
             <a href="javascript:;" class="color-link operation-btn" @click="toDetail(scope.row.id)"
               ><i class="iconfont icon-xiugai"></i>修改</a
             >

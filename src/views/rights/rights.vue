@@ -43,13 +43,13 @@
     <div v-loading="msgListLoading">
       <el-table :data="msgListData.entities" style="width: 100%">
         <el-table-column prop="templateName" label="序号" width="50">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ (msgListData.pageNo - 1) * msgListData.pageSize + scope.$index + 1 }}
           </template>
         </el-table-column>
         <el-table-column prop="rightsName" label="权益名称" min-width="12%"> </el-table-column>
         <el-table-column prop="rightsType" label="权益分类" min-width="12%">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ scope.row.rightsType | rightsTypeFilter }}
           </template>
         </el-table-column>
@@ -57,18 +57,18 @@
         <!-- <el-table-column prop="groupName" label="适用分组" min-width="12%" show-overflow-tooltip> </el-table-column>  -->
         <el-table-column prop="time" label="有效期" min-width="12%" show-overflow-tooltip> </el-table-column>
         <el-table-column prop="status" label="状态" min-width="10%">
-          <template scope="scope">
+          <template slot-scope="scope">
             <div>{{ scope.row.status | status }}</div>
           </template>
         </el-table-column>
         <el-table-column prop="userName" label="创建人" min-width="12%" show-overflow-tooltip> </el-table-column>
         <el-table-column prop="crTime" label="创建时间" min-width="12%">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ gUtils.dateFormat(scope.row.crTime, 'yyyy-MM-dd') }}
           </template>
         </el-table-column>
         <el-table-column label="操作" min-width="18%">
-          <template scope="scope">
+          <template slot-scope="scope">
             <a
               v-if="jurisdiction['rightsOperations:rightsStrategy:edit']"
               href="javascript:;"

@@ -108,7 +108,7 @@
       style="width: 100%;margin-top: 20px;"
     >
       <el-table-column label="序号" width="80" :show-overflow-tooltip="true">
-        <template scope="scope">
+        <template slot-scope="scope">
           {{ (pageNo - 1) * pageSize + scope.$index + 1 }}
         </template>
       </el-table-column>
@@ -129,7 +129,7 @@
       <el-table-column prop="evaluateTime" label="评价时间" width="160" :show-overflow-tooltip="true">
       </el-table-column>
       <el-table-column label="查看详情" width="100" :show-overflow-tooltip="true">
-        <template scope="scope">
+        <template slot-scope="scope">
           <el-button type="text" @click="getJDDetail(scope.row)">查看详情</el-button>
         </template>
       </el-table-column>
@@ -141,7 +141,7 @@
     <!--天猫商城表格-->
     <el-table v-show="sign == 2" border :data="TMData" style="width: 100%;margin-top: 20px;">
       <el-table-column label="序号" width="80" :show-overflow-tooltip="true">
-        <template scope="scope">
+        <template slot-scope="scope">
           {{ (pageNo - 1) * pageSize + scope.$index + 1 }}
         </template>
       </el-table-column>
@@ -160,7 +160,7 @@
       <el-table-column prop="evaluateTime" label="评价时间" width="160" :show-overflow-tooltip="true">
       </el-table-column>
       <el-table-column label="查看详情" width="100" :show-overflow-tooltip="true">
-        <template scope="scope">
+        <template slot-scope="scope">
           <el-button type="text" @click="getTMDetail(scope.row)">查看详情</el-button>
         </template>
       </el-table-column>
@@ -172,7 +172,7 @@
     <!--顺逛商城-->
     <el-table v-show="sign == 3" border :data="SGData" style="width: 100%;margin-top: 20px;">
       <el-table-column label="序号" width="80" :show-overflow-tooltip="true">
-        <template scope="scope">
+        <template slot-scope="scope">
           {{ (pageNo - 1) * pageSize + scope.$index + 1 }}
         </template>
       </el-table-column>
@@ -190,7 +190,7 @@
       <el-table-column prop="comment_time" label="评价时间" width="160" :show-overflow-tooltip="true">
       </el-table-column>
       <el-table-column label="查看详情" width="100" :show-overflow-tooltip="true">
-        <template scope="scope">
+        <template slot-scope="scope">
           <el-button type="text" @click="getSGDetail(scope.row)">查看详情</el-button>
         </template>
       </el-table-column>

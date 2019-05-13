@@ -21,7 +21,7 @@
       <el-table-column type="selection" width="55"> </el-table-column>
       <el-table-column prop="subject" label="模板名称" min-width="25%" show-overflow-tooltip> </el-table-column>
       <el-table-column prop="crUserId" label="模板内容" min-width="25%" show-overflow-tooltip>
-        <template scope="scope">
+        <template slot-scope="scope">
           <div v-html="scope.row.content"></div>
         </template>
       </el-table-column>

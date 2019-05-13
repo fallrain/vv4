@@ -14,12 +14,12 @@
     <div v-loading="msgListLoading">
       <el-table :data="msgListData.entities" style="width: 100%">
         <el-table-column prop="templateName" label="序号" width="50">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ (msgListData.pageNo - 1) * msgListData.pageSize + scope.$index + 1 }}
           </template>
         </el-table-column>
         <el-table-column label="模板名称" min-width="32%" show-overflow-tooltip>
-          <template scope="scope">
+          <template slot-scope="scope">
             <a href="javascript:;" @click="toDetail(scope.row.id, 'view')" class="color-link">{{
               scope.row.templateName
             }}</a>
@@ -27,19 +27,19 @@
         </el-table-column>
         <el-table-column prop="templateTitle" label="标题" min-width="31%" show-overflow-tooltip> </el-table-column>
         <el-table-column prop="templateContent" label="内容" min-width="19%" show-overflow-tooltip>
-          <template scope="scope">
+          <template slot-scope="scope">
             <!-- <div v-html="scope.row.templateContent"></div> -->
             <a href="javascript:;" class="color-link" @click="view(scope.row.templateContent)">查看</a>
           </template>
         </el-table-column>
         <el-table-column prop="crUserName" label="创建人" min-width="17%" show-overflow-tooltip> </el-table-column>
         <el-table-column prop="crTime" label="创建时间" min-width="17%">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ gUtils.dateFormat(scope.row.crTime, 'yyyy-MM-dd') }}
           </template>
         </el-table-column>
         <el-table-column label="操作" width="160">
-          <template scope="scope">
+          <template slot-scope="scope">
             <a
               v-if="jurisdiction['communication:emailManager:edit']"
               href="javascript:;"

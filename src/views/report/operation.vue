@@ -85,7 +85,7 @@
         <div style="margin-top:20px;">
           <el-table :data="statisticsNumData.entities" style="width: 100%" height="202">
             <el-table-column prop="statisticsDate" label="日期" min-width="50%">
-              <template scope="scope">
+              <template slot-scope="scope">
                 <div>{{ gUtils.dateFormat(scope.row.statisticsDate, 'yyyy-MM-dd') }}</div>
               </template>
             </el-table-column>
@@ -185,7 +185,7 @@
             <div style="margin-top:20px;">
               <el-table :data="vipCostMsgListData01.entities" style="width: 100%" height="202">
                 <el-table-column prop="countDate" label="时间" min-width="50%">
-                  <template scope="scope">
+                  <template slot-scope="scope">
                     <div>{{ gUtils.dateFormat(scope.row.countDate, 'yyyy-MM-dd') }}</div>
                   </template>
                 </el-table-column>
@@ -271,7 +271,7 @@
             <div style="margin-top:20px;">
               <el-table :data="vipCostMsgListData02.entities" style="width: 100%" height="202">
                 <el-table-column prop="countDate" label="时间" min-width="50%">
-                  <template scope="scope">
+                  <template slot-scope="scope">
                     <div>{{ gUtils.dateFormat(scope.row.countDate, 'yyyy-MM-dd') }}</div>
                   </template>
                 </el-table-column>
@@ -357,7 +357,7 @@
             <div style="margin-top:20px;">
               <el-table :data="vipCostMsgListData03.entities" style="width: 100%" height="202">
                 <el-table-column prop="countDate" label="时间" min-width="20%">
-                  <template scope="scope">
+                  <template slot-scope="scope">
                     <div>{{ gUtils.dateFormat(scope.row.countDate, 'yyyy-MM-dd') }}</div>
                   </template>
                 </el-table-column>

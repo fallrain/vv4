@@ -80,7 +80,7 @@
       <el-table-column prop="sourceName" label="认证来源" min-width="120" :show-overflow-tooltip="true">
       </el-table-column>
       <!--<el-table-column prop="date" label="操作" min-width="120">-->
-      <!--<template scope="scope">-->
+      <!--<template slot-scope="scope">-->
       <!--<el-button type="text" @click="casaterelease(scope.row.id)">释放序列号</el-button>-->
       <!--</template>-->
       <!--</el-table-column>-->

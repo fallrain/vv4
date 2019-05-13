@@ -49,49 +49,49 @@
           </template>
         </el-table-column>
         <!-- <el-table-column prop="templateName" label="" width="40">
-              <template scope="scope">
+              <template slot-scope="scope">
                 <i class="active-icon iconfont " :class="{'icon-houtaiicon--':scope.row.status == 1,'icon-yishanchu':scope.row.status == 1,'icon-zanting2':scope.row.status == -3,'icon-yiguoqi':scope.row.status == -4,'icon-ep-':scope.row.status == -6}"></i>
               </template>
             </el-table-column> -->
         <el-table-column prop="templateName" label="序号" width="50" align="center">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ (msgListData.pageNo - 1) * msgListData.pageSize + scope.$index + 1 }}
           </template>
         </el-table-column>
         <el-table-column prop="activityName" label="活动名称" show-overflow-tooltip align="center"> </el-table-column>
         <!-- <el-table-column prop="activityDesc" label="描述" show-overflow-tooltip> </el-table-column> -->
         <el-table-column prop="fixCommunicationTime" label="活动时间" width="180" show-overflow-tooltip align="center">
-          <template scope="scope">
+          <template slot-scope="scope">
             <span v-if="scope.row.fixNum == 1">{{ scope.row.fixCommunicationTime }}</span>
             <span v-if="scope.row.fixNum == -1">{{ scope.row.unSetCommunicationTime }}</span>
           </template>
         </el-table-column>
         <el-table-column prop="fixNum" label="沟通频率" align="center">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ scope.row.fixNum | fixNumFilter }}
           </template>
         </el-table-column>
         <el-table-column prop="duo" label="多波次" align="center"> </el-table-column>
         <el-table-column prop="filterInfo" label="参加人数" align="center">
-          <template scope="scope">
+          <template slot-scope="scope">
             <div v-if="userNumLoading" v-loading="userNumLoading" style="position: initial;height:35px;"></div>
             <div v-if="!userNumLoading">{{ scope.row.filterInfo.userNum }}</div>
           </template>
         </el-table-column>
         <!-- <el-table-column prop="configFlag" label="沟通流程">
-              <template scope="scope">
+              <template slot-scope="scope">
                 {{scope.row.configFlag | flowFilter}}
               </template>
             </el-table-column> -->
         <el-table-column prop="crUserName" label="创建人" show-overflow-tooltip align="center"> </el-table-column>
         <el-table-column prop="crTime" label="创建时间" show-overflow-tooltip align="center">
-          <template scope="scope">
+          <template slot-scope="scope">
             <div>{{ gUtils.dateFormat(scope.row.crTime, 'yyyy-MM-dd') }}</div>
           </template>
         </el-table-column>
         <el-table-column prop="checkUserName" label="审核人" show-overflow-tooltip align="center"> </el-table-column>
         <el-table-column prop="status" label="状态" align="center">
-          <template scope="scope">
+          <template slot-scope="scope">
             <p v-if="scope.row.status != -8" v-html="statusFilter(scope.row.status)"></p>
             <el-tooltip
               v-if="scope.row.status == -8"
@@ -105,7 +105,7 @@
           </template>
         </el-table-column>
         <el-table-column label="操作" width="200" align="center">
-          <template scope="scope">
+          <template slot-scope="scope">
             <a
               v-if="
                 jurisdiction['marketingOperations:activityManager:edit'] &&

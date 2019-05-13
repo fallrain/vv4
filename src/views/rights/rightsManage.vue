@@ -18,7 +18,7 @@
     <div v-loading="msgListLoading">
       <el-table :data="msgListData.entities" style="width: 100%" :row-class-name="listRowClass">
         <el-table-column prop="templateName" label="序号" width="50">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ (msgListData.pageNo - 1) * msgListData.pageSize + scope.$index + 1 }}
           </template>
         </el-table-column>
@@ -26,12 +26,12 @@
         <el-table-column prop="brandName" label="品牌"> </el-table-column>
         <el-table-column prop="rankNames" label="所属等级" show-overflow-tooltip> </el-table-column>
         <el-table-column prop="configFlag" label="详情">
-          <template scope="scope">
+          <template slot-scope="scope">
             <a href="javascript:;" class="color-link" @click="review(scope.row)">查看</a>
           </template>
         </el-table-column>
         <el-table-column label="操作">
-          <template scope="scope">
+          <template slot-scope="scope">
             <a
               href="javascript:;"
               class="color-link operation-btn"

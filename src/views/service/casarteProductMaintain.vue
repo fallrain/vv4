@@ -122,7 +122,7 @@
             :fetch-suggestions="listShopInfo"
             placeholder="请输入型号关键字"
             @select="storeSelect"
-            :props="{ value: 'mmt_material_descrition', label: 'mmt_material_descrition' }"
+            value-key="mmt_material_descrition"
           >
           </el-autocomplete>
           （输入型号关键字）

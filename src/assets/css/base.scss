@@ -35,7 +35,6 @@ select,
 textarea {
   /*font: 14px "微软雅黑";*/
   /*font: 12px/1.5tahoma, arial, \5b8b\4f53;*/
-  background: #eff4f8;
   overflow-x: hidden;
   resize: none;
 }
@@ -3114,6 +3113,12 @@ textarea:focus:invalid {
   height: 32px;
 }
 
+.config-form {
+  .el-icon-date {
+    line-height: 32px;
+  }
+}
+
 .config-form .trs-btn {
   height: 32px;
   line-height: 32px;
@@ -3180,6 +3185,7 @@ input::-webkit-contacts-auto-fill-button {
   overflow: hidden;
 }
 
+//傻逼拓尔思代码
 div .el-input__inner {
   height: 36px;
 }
@@ -3225,7 +3231,8 @@ input[type="file"] {
 /*ie9bug*/
 
 .el-radio__inner::after {
-  margin: -3px 0 0 -3 px\9 \0
+  margin: -3px 0 0 -3 px \9
+  \0
 }
 
 @media all and (min-width: 0) {
@@ -3235,7 +3242,8 @@ input[type="file"] {
 }
 
 .el-select__tags {
-  margin-top: -15 px\9 \0
+  margin-top: -15 px \9
+  \0
 }
 
 @media all and (min-width: 0) {

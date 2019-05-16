@@ -114,7 +114,7 @@
 }
 
 .theme-default .g-tree .pdl18 {
-  padding-left: 54px!important;
+  padding-left: 54px !important;
 }
 
 
@@ -185,7 +185,7 @@
   display: inline-block;
   background: #e6e6e6;
   color: #666;
-  text-align: center!important;
+  text-align: center !important;
   line-height: 31px;
   cursor: pointer;
   font-size: 12px;
@@ -193,7 +193,7 @@
 
 .theme-default .g-button:hover {
   background: #536378;
-  color: #fff!important;
+  color: #fff !important;
 }
 
 .theme-default .g-button-radius {
@@ -204,27 +204,27 @@
 
 .theme-default .g-button.g-button-radius:hover {
   background: #2d97de;
-  color: #fff!important;
+  color: #fff !important;
 }
 
 .theme-default .g-button.g-button-blue {
   background: #2d97de;
-  color: #fff!important;
+  color: #fff !important;
 }
 
 .theme-default .g-button.g-button-blue:hover {
   background: #5d9efc;
-  color: #fff!important;
+  color: #fff !important;
 }
 
 .theme-default .g-button.g-button-gray {
   background: #cdced0;
-  color: #fff!important;
+  color: #fff !important;
 }
 
 .theme-default .g-button.g-button-gray-radius {
   background: #cdced0;
-  color: #fff!important;
+  color: #fff !important;
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -232,7 +232,7 @@
 
 .theme-default .g-button.g-button-blue-radius {
   background: #2c97dd;
-  color: #fff!important;
+  color: #fff !important;
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -240,12 +240,12 @@
 
 .theme-default .g-button.g-button-blue-radius:hover {
   background: #5d9efc;
-  color: #fff!important;
+  color: #fff !important;
 }
 
 .theme-default .g-button.btn-select {
   background: #2c97dd;
-  color: #fff!important;
+  color: #fff !important;
 }
 
 
@@ -340,43 +340,43 @@
 }
 
 .ob-table th:nth-child(3) {
-  width: 150px!important
+  width: 150px !important
 }
 
 .ob-table th:nth-child(4) {
-  width: 100px!important
+  width: 100px !important
 }
 
 .ob-table th:nth-child(5) {
-  width: 150px!important
+  width: 150px !important
 }
 
 .ob-table th:nth-child(6) {
-  width: 220px!important
+  width: 220px !important
 }
 
 .ob-table th:nth-child(7) {
-  width: 150px!important
+  width: 150px !important
 }
 
 .ob-table th:nth-child(8) {
-  width: 120px!important
+  width: 120px !important
 }
 
 .ob-table th:nth-child(9) {
-  width: 80px!important
+  width: 80px !important
 }
 
 .ob-table th:nth-child(10) {
-  width: 100px!important
+  width: 100px !important
 }
 
 .ob-table th:nth-child(11) {
-  width: 120px!important
+  width: 120px !important
 }
 
 .ob-table th:nth-child(12) {
-  width: 80px!important
+  width: 80px !important
 }
 
 .pb-table th {
@@ -389,7 +389,7 @@
 
 /*分页*/
 
-.theme-default .g-table tfoot>td {
+.theme-default .g-table tfoot > td {
   text-align: right;
   height: 58px;
 }
@@ -413,9 +413,9 @@
 .theme-default .g-pager-main span {
   width: 35px;
   height: 35px;
-  border-top: 1px solid#e3e3e3;
-  border-bottom: 1px solid#e3e3e3;
-  border-left: 1px solid#e3e3e3;
+  border-top: 1px solid #e3e3e3;
+  border-bottom: 1px solid #e3e3e3;
+  border-left: 1px solid #e3e3e3;
   display: block;
   float: left;
   cursor: pointer;
@@ -425,7 +425,7 @@
 }
 
 .theme-default .g-pager-main span:last-child {
-  border-right: 1px solid#e3e3e3;
+  border-right: 1px solid #e3e3e3;
 }
 
 .theme-default .g-pager-main span:hover {
@@ -688,7 +688,7 @@
 }
 
 .theme-default .g-select span.g-select_tit {
-  width: 100%!important;
+  width: 100% !important;
   border: 1px solid #ccc;
   background: #fff;
   height: 30px;
@@ -697,7 +697,7 @@
   padding: 6px 0 5px 10px;
   color: #666;
   cursor: pointer;
-  text-align: left!important;
+  text-align: left !important;
 }
 
 .theme-default .g-select i {
@@ -823,7 +823,7 @@
   // padding: 6px 10px;
 }
 
-.el-input__icon+.el-input__inner {
+.el-input__icon + .el-input__inner {
   padding-right: 37px;
 }
 
@@ -840,8 +840,8 @@
   top: 65px
 }
 
-.el-checkbox__inner{
-  &::after{
+.el-checkbox__inner {
+  &::after {
     width: 4px;
     height: 8px;
     top: 1px;
@@ -850,7 +850,43 @@
 }
 
 .el-table td,
-.el-table th{
+.el-table th {
   padding: 7px 0;
   text-align: center;
 }
+
+.el-input-number {
+  .el-input__inner {
+  }
+}
+
+.el-input-number {
+  line-height: normal;
+}
+
+.el-input-number__decrease,
+.el-input-number__increase {
+  line-height: 34px;
+}
+
+/*checkbox*/
+
+.el-checkbox {
+  margin-right: 15px;
+}
+
+.el-checkbox__label {
+  padding-left: 5px;
+}
+
+/*checkbox end*/
+
+/*date-picker*/
+
+.el-date-editor{
+  .el-range-input{
+    font-size: 12px;
+    width: 49%;
+  }
+}
+/*date-picker end*/

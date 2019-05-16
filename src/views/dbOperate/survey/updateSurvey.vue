@@ -83,7 +83,7 @@
                                    v-model="productKeyWord"
                                    :fetch-suggestions="listProductInfo"
                                    @select="productSelect"
-                                   :props="{'value':'desc','label':'desc'}"
+                                   value-key="desc"
                                    :disabled="CC"
                                    :trigger-on-focus="false">
                   </el-autocomplete>
@@ -199,7 +199,9 @@
           :modal-append-to-body="false">
           <div class="xiaowei-dialog-header">
               <p>添加权益活动门店：</p>
-              <el-autocomplete v-if="selectStoreShow" :fetch-suggestions="listShopInfo" placeholder="输入门店名称" @select="storeSelect" :props="{'value':'shopName','label':'shopName'}" style="width:407px">
+              <el-autocomplete
+                v-if="selectStoreShow" :fetch-suggestions="listShopInfo" placeholder="输入门店名称" @select="storeSelect"
+                               :props="{'value':'shopName','label':'shopName'}" value-key="shopName" style="width:407px">
               </el-autocomplete>
               <a href="javascript:;" class="select-all-shop" @click="storeSelect({'shopName':'所有门店','shopCode':'all'})">选择所有门店</a>
               <p>已经选定的门店：</p>

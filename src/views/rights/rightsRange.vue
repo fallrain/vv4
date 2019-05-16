@@ -205,7 +205,7 @@
           :fetch-suggestions="listShopInfo"
           placeholder="输入门店名称添加"
           @select="storeSelect"
-          :props="{ value: 'shopName', label: 'shopName' }"
+          value-key="shopName"
           style="width:407px"
         >
         </el-autocomplete>
@@ -244,7 +244,7 @@
           :fetch-suggestions="listMutexInfo"
           placeholder="输入活动名称添加"
           @select="mutexSelect"
-          :props="{ value: 'rightName', label: 'rightName' }"
+          value-key="rightName"
           style="width:407px"
         >
         </el-autocomplete>

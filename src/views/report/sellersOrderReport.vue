@@ -14,7 +14,7 @@
           style="width: 60%;"
           :fetch-suggestions="rightsList"
           :disabled="rightdis"
-          :props="{ value: 'rightName', label: 'rightName' }"
+          value-key="rightName"
           @select="rightsSelect"
           v-model="input.rightName"
           placeholder="请输入权益活动"
@@ -27,6 +27,9 @@
           v-model="orderTime"
           type="datetimerange"
           placeholder="选择订单时间范围"
+          start-placeholder="开始时间"
+          end-placeholder="结束时间"
+          value-format="yyyy-MM-dd"
           :picker-options="pickerOptions"
           @change="timeChange"
         >
@@ -69,7 +72,7 @@
           style="width: 60%;"
           :fetch-suggestions="shopList"
           :disabled="shopdis"
-          :props="{ value: 'shopName', label: 'shopName' }"
+          value-key="shopName"
           v-model="input.shopName"
           placeholder="请输入门店名称"
         ></el-autocomplete>
@@ -92,7 +95,7 @@
           :fetch-suggestions="giftList"
           @select="giftSelect"
           v-model="input.giftName"
-          :props="{ value: 'productName', label: 'productName' }"
+          value-key="productName"
           placeholder="请输入礼品名称"
         ></el-autocomplete>
       </el-col>

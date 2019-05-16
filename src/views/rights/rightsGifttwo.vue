@@ -154,7 +154,8 @@
                                          placeholder="请输入产品型号" v-model="productName"
                                          :fetch-suggestions="listProductInfo"
                                          @select="type4ProductSelect"
-                                         :props="{'value':'desc','label':'desc'}"></el-autocomplete>
+                                         value-key="desc"
+                        ></el-autocomplete>
                         <div class="product-tap">
                           <div v-for="(product, index) in buyNumProductCode">
                             <span :title="product.brandName+'-'+product.productCategoryCode+'-'+product.modelNo">{{product.brandName}}-{{product.productCategoryCode}}-{{product.modelNo}}</span>
@@ -216,7 +217,8 @@
                     <el-autocomplete :disabled="true" style="width: 435px;" placeholder="输入参加活动的产品型号"
                                      v-model="product.desc" :fetch-suggestions="listProductInfo"
                                      @select="type3ProductSelect"
-                                     :props="{'value':'desc','label':'desc'}"></el-autocomplete>
+                                     value-key="desc"
+                    ></el-autocomplete>
                     <i class="ico-del02" @click="deletepro(index)"></i>
                     <i class="ico-link"></i>
                   </div>
@@ -364,7 +366,8 @@
                 placeholder="输入参加活动的产品型号"
                 v-model="productName" :fetch-suggestions="listProductInfo"
                 @select="productSelect"
-                :props="{'value':'desc','label':'desc'}"></el-autocomplete>
+                  value-key="desc"
+              ></el-autocomplete>
                 <div
                   :class="[type1Config.type === 3 && 'rightsgift-gift-item-par']"
                 >
@@ -552,8 +555,10 @@
                   </el-select>
                   <el-autocomplete style="width: 250px;" v-model="product.desc"
                                    :fetch-suggestions="(queryString, cb)=>{return queryModel(queryString, cb,1,index)}"
-                                   placeholder="产品型号可为空，默认所有型号" :props="{'value':'desc','label':'desc'}"
-                                   @select="(item, e)=>{return modelSelect(item, 1,index)}" :trigger-on-focus="false">
+                                   placeholder="产品型号可为空，默认所有型号"
+                                   @select="(item, e)=>{return modelSelect(item, 1,index)}" :trigger-on-focus="false"
+                                   value-key="label"
+                  >
                   </el-autocomplete>
                   <i class="ico-del02" @click="deleteLint(index)" v-if="lintList.length>1"></i>
                   <i class="ico-link" v-if="lintList.length>1"></i>
@@ -602,8 +607,10 @@
                 </el-select>
                 <el-autocomplete style="width: 250px;" v-model="productModel2"
                                  :fetch-suggestions="(queryString, cb)=>{return queryModel(queryString, cb,2)}"
-                                 placeholder="产品型号必填" :props="{'value':'desc','label':'desc'}"
-                                 @select="(item, e)=>{return modelSelect(item, 2)}" :trigger-on-focus="false">
+                                 placeholder="产品型号必填"
+                                 @select="(item, e)=>{return modelSelect(item, 2)}" :trigger-on-focus="false"
+                                 value-key="desc"
+                >
                 </el-autocomplete>
                 <el-button type="primary" @click="addmodelone(2)" class="addmodel-but">添加</el-button>
               </div>
@@ -633,8 +640,10 @@
                 </el-select>
                 <el-autocomplete style="width: 250px;" v-model="productModel3"
                                  :fetch-suggestions="(queryString, cb)=>{return queryModel(queryString, cb,3)}"
-                                 placeholder="产品型号可为空，默认所有型号" :props="{'value':'desc','label':'desc'}"
-                                 @select="(item, e)=>{return modelSelect(item, 3)}" :trigger-on-focus="false">
+                                 placeholder="产品型号可为空，默认所有型号"
+                                 @select="(item, e)=>{return modelSelect(item, 3)}" :trigger-on-focus="false"
+                                 value-key="desc"
+                >
                 </el-autocomplete>
                 <el-button type="primary" @click="addmodelone(3)" class="addmodel-but">添加</el-button>
               </div>

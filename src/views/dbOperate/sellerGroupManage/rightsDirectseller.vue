@@ -116,7 +116,7 @@
             :fetch-suggestions="listShopInfo"
             placeholder="输入门店名称添加"
             @select="storeSelect"
-            :props="{ value: 'shopCode', label: 'shopName' }"
+            value-key="shopCode"
             style="width:407px"
           >
           </el-autocomplete>

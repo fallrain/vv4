@@ -27,7 +27,7 @@
         <el-autocomplete
           style="width: 340px;"
           v-model="form.xwName"
-          :props="{ value: 'xwName', label: 'xwName' }"
+          value-key="xwName"
           :fetch-suggestions="querySearch"
           placeholder="请输入小微进行检索"
           @select="handleSelect"

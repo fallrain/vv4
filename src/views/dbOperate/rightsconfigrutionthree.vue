@@ -147,7 +147,7 @@
               :fetch-suggestions="listProductInfo"
               @select="productSelect"
               v-model="productKeyWord"
-              :props="{ value: 'desc', label: 'desc' }"
+              value-key="desc"
               :disabled="CC"
               :trigger-on-focus="false"
             >
@@ -245,6 +245,7 @@
           placeholder="输入门店名称添加"
           @select="storeSelect"
           :props="{ value: 'shopName', label: 'shopName' }"
+          value-key="shopName"
           style="width:407px"
         >
         </el-autocomplete>

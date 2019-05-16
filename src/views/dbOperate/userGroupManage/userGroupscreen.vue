@@ -79,7 +79,7 @@
                            :fetch-suggestions="listProductInfo"
                            @select="productSelect"
                            v-model="productKeyWord"
-                           :props="{'value':'desc','label':'desc'}"
+                           value-key="desc"
                            >
           </el-autocomplete>
         </td></tr>

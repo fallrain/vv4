@@ -126,7 +126,7 @@
                                         <el-option v-for="item in productCategoryoptions" :key="item" :label="item" :value="item">
                                         </el-option>
                                     </el-select>
-                                    <el-autocomplete style="width: 250px;" v-model="product.desc" :fetch-suggestions="(queryString, cb)=>{return queryModel(queryString, cb,1,index)}" placeholder="产品型号可为空，默认所有型号" :props="{'value':'desc','label':'desc'}"
+                                    <el-autocomplete style="width: 250px;" v-model="product.desc" :fetch-suggestions="(queryString, cb)=>{return queryModel(queryString, cb,1,index)}" placeholder="产品型号可为空，默认所有型号" value-key="desc"
                                                      @select="(item, e)=>{return modelSelect(item, 1,index)}" :trigger-on-focus="false">
                                     </el-autocomplete>
                                     <i class="ico-del02" @click="deleteLint(index)" v-if="lintList.length>1"></i>
@@ -172,7 +172,7 @@
                                     <el-option v-for="item in prooptions" :key="item" :label="item" :value="item">
                                     </el-option>
                                 </el-select>
-                                <el-autocomplete style="width: 250px;" v-model="productModel2" :fetch-suggestions="(queryString, cb)=>{return queryModel(queryString, cb,2)}" placeholder="产品型号必填" :props="{'value':'desc','label':'desc'}"
+                                <el-autocomplete style="width: 250px;" v-model="productModel2" :fetch-suggestions="(queryString, cb)=>{return queryModel(queryString, cb,2)}" placeholder="产品型号必填" value-key="desc"
                                                  @select="(item, e)=>{return modelSelect(item, 2)}" :trigger-on-focus="false">
                                 </el-autocomplete>
                                 <el-button type="primary" @click="addmodelone(2)" class="addmodel-but">添加</el-button>
@@ -199,7 +199,7 @@
                                     <el-option v-for="item in productCategoryoptions" :key="item" :label="item" :value="item">
                                     </el-option>
                                 </el-select>
-                                <el-autocomplete style="width: 250px;" v-model="productModel3" :fetch-suggestions="(queryString, cb)=>{return queryModel(queryString, cb,3)}" placeholder="产品型号可为空，默认所有型号" :props="{'value':'desc','label':'desc'}"
+                                <el-autocomplete style="width: 250px;" v-model="productModel3" :fetch-suggestions="(queryString, cb)=>{return queryModel(queryString, cb,3)}" placeholder="产品型号可为空，默认所有型号" value-key="desc"
                                                  @select="(item, e)=>{return modelSelect(item, 3)}" :trigger-on-focus="false">
                                 </el-autocomplete>
                                 <el-button type="primary" @click="addmodelone(3)" class="addmodel-but">添加</el-button>

@@ -883,10 +883,26 @@
 
 /*date-picker*/
 
-.el-date-editor{
-  .el-range-input{
+.el-date-editor {
+  .el-range-input {
     font-size: 12px;
     width: 49%;
   }
+
+  .el-range__icon {
+    line-height: normal;
+  }
+
+  .el-range-separator {
+    line-height: normal;
+    height: auto;
+  }
 }
+
+.el-range-editor {
+  .el-range-input {
+    line-height: normal;
+  }
+}
+
 /*date-picker end*/

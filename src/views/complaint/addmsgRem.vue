@@ -36,6 +36,7 @@
           :editable="false"
           v-model="sendTime"
           @change="timeChange"
+          value-format="yyyy-MM-dd HH:mm:ss"
           type="datetime"
           placeholder="选择发送时间"
           :picker-options="pickerOptions0"

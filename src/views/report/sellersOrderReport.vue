@@ -29,7 +29,7 @@
           placeholder="选择订单时间范围"
           start-placeholder="开始时间"
           end-placeholder="结束时间"
-          value-format="yyyy-MM-dd"
+          value-format="yyyy-MM-dd HH:mm:ss"
           :picker-options="pickerOptions"
           @change="timeChange"
         >
@@ -123,26 +123,26 @@
         <el-button type="primary" @click="getquery">查询</el-button>
       </el-col>
     </el-row>
-    <el-row style="margin-top: 15px;"> </el-row>
+    <el-row style="margin-top: 15px;"></el-row>
     <div style="margin-top: 15px;">
       <template>
         <el-table v-loading="loading" border :data="tableData" stripe style="width: 100%;text-align: center;">
-          <el-table-column prop="rightName" label="活动名称" width="180"> </el-table-column>
-          <el-table-column prop="orderId" label="订单号" width="180"> </el-table-column>
-          <el-table-column prop="orderTime" label="订单时间" width="160"> </el-table-column>
+          <el-table-column prop="rightName" label="活动名称" width="180"></el-table-column>
+          <el-table-column prop="orderId" label="订单号" width="180"></el-table-column>
+          <el-table-column prop="orderTime" label="订单时间" width="160"></el-table-column>
           <el-table-column prop="bccprice" label="订单金额" width="140" :show-overflow-tooltip="true">
           </el-table-column>
-          <el-table-column prop="userName" label="顾客姓名" width="90"> </el-table-column>
-          <el-table-column prop="userNumber" label="顾客手机号" width="120"> </el-table-column>
-          <el-table-column prop="userAddress" label="顾客配送地址" width="160"> </el-table-column>
-          <el-table-column prop="ptId" label="直销员工号" :show-overflow-tooltip="true" width="130"> </el-table-column>
-          <el-table-column prop="ptName" label="直销员姓名" width="100"> </el-table-column>
-          <el-table-column prop="ptNumber" label="直销员手机号" width="120"> </el-table-column>
-          <el-table-column prop="xiaoweiName" label="小微名" width="100"> </el-table-column>
-          <el-table-column prop="channelName" label="渠道名" width="150"> </el-table-column>
-          <el-table-column prop="shopName" label="门店名" width="100"> </el-table-column>
-          <el-table-column prop="rightInfo" label="权益信息" width="100"> </el-table-column>
-          <el-table-column prop="rightState" label="权益状态" width="100"> </el-table-column>
+          <el-table-column prop="userName" label="顾客姓名" width="90"></el-table-column>
+          <el-table-column prop="userNumber" label="顾客手机号" width="120"></el-table-column>
+          <el-table-column prop="userAddress" label="顾客配送地址" width="160"></el-table-column>
+          <el-table-column prop="ptId" label="直销员工号" :show-overflow-tooltip="true" width="130"></el-table-column>
+          <el-table-column prop="ptName" label="直销员姓名" width="100"></el-table-column>
+          <el-table-column prop="ptNumber" label="直销员手机号" width="120"></el-table-column>
+          <el-table-column prop="xiaoweiName" label="小微名" width="100"></el-table-column>
+          <el-table-column prop="channelName" label="渠道名" width="150"></el-table-column>
+          <el-table-column prop="shopName" label="门店名" width="100"></el-table-column>
+          <el-table-column prop="rightInfo" label="权益信息" width="100"></el-table-column>
+          <el-table-column prop="rightState" label="权益状态" width="100"></el-table-column>
           <el-table-column label="操作" align="center" width="100">
             <template slot-scope="scope">
               <el-button @click="view(scope.row.orderId)" type="text" size="small">查看详情</el-button>
@@ -164,18 +164,17 @@
 
     <el-dialog title="详情" :visible.sync="dialogVisible" size="100" :modal-append-to-body="false">
       <el-table :data="orderInfoList" border style="width: 100%;text-align: center;">
-        <el-table-column prop="brandName" label="品牌" width="100"> </el-table-column>
-        <el-table-column prop="modelNo" label="产品型号" width="160" :show-overflow-tooltip="true"> </el-table-column>
-        <el-table-column prop="bccPrice" label="产品价格" width="120"> </el-table-column>
-        <el-table-column prop="activatedFlag" label="产品绑定状态" width="110"> </el-table-column>
-        <el-table-column prop="lastUpdateTime" label="产品绑定时间" width="160"> </el-table-column>
+        <el-table-column prop="brandName" label="品牌" width="100"></el-table-column>
+        <el-table-column prop="modelNo" label="产品型号" width="160" :show-overflow-tooltip="true"></el-table-column>
+        <el-table-column prop="bccPrice" label="产品价格" width="120"></el-table-column>
+        <el-table-column prop="activatedFlag" label="产品绑定状态" width="110"></el-table-column>
+        <el-table-column prop="lastUpdateTime" label="产品绑定时间" width="160"></el-table-column>
       </el-table>
     </el-dialog>
   </div>
 </template>
 <script>
 import axios from 'axios';
-import qs from 'qs';
 import gUtils from '../../utils/gUtils.js';
 
 export default {
@@ -272,11 +271,12 @@ export default {
       const params = {
         rightName: this.input.rightName
       };
-      this.requestReport.getRightsName(params).then((data) => {
-        if (data.data) {
-          _this.rightsid = data.data[0].id;
-        }
-      });
+      this.requestReport.getRightsName(params)
+        .then((data) => {
+          if (data.data) {
+            _this.rightsid = data.data[0].id;
+          }
+        });
     }
     // 查询小微id
     if (this.$route.query.xiaoweiId) {
@@ -287,19 +287,20 @@ export default {
     const params = {
       xiaoweiId
     };
-    this.requestReport.queryxiaoweiId(params).then((data) => {
-      if (data.isSuccess) {
-        if (data.data) {
-          _this.xiaoweidis = true;
-          _this.input.xiaoweiId = data.data;
+    this.requestReport.queryxiaoweiId(params)
+      .then((data) => {
+        if (data.isSuccess) {
+          if (data.data) {
+            _this.xiaoweidis = true;
+            _this.input.xiaoweiId = data.data;
+          } else {
+            _this.xiaoweidis = false;
+          }
         } else {
-          _this.xiaoweidis = false;
+          _this.errmsg = data.msg;
+          _this.jurisdiction = true;
         }
-      } else {
-        _this.errmsg = data.msg;
-        _this.jurisdiction = true;
-      }
-    });
+      });
 
     this.getAllocator();
   },
@@ -314,12 +315,15 @@ export default {
             that.allocators = response.data.data;
           }
         })
-        .catch((error) => {});
+        .catch((error) => {
+        });
     },
     timeChange(e) {
-      console.log(e.split(' - '));
-      this.input.startTime = e.split(' - ')[0];
-      this.input.endTime = e.split(' - ')[1];
+      let range = e;
+      if (!range) {
+        range = ['', ''];
+      }
+      [this.input.startTime, this.input.endTime] = range;
     },
     getCreatertime(e) {
       const create_time = parseInt(e);
@@ -353,20 +357,21 @@ export default {
       const data = {
         orderId: e
       };
-      this.requestReport.getOrderDetails(data).then((data) => {
-        if (data && data.orderInfoList) {
-          data.orderInfoList.forEach((el) => {
-            if (el.activatedFlag == 0) {
-              el.activatedFlag = '未激活';
-              el.lastUpdateTime = '';
-            } else if (el.activatedFlag == 1) {
-              el.activatedFlag = '已激活';
-              el.lastUpdateTime = _this.getCreatertime(el.lastUpdateTime);
-            }
-          });
-        }
-        _this.orderInfoList = data.orderInfoList;
-      });
+      this.requestReport.getOrderDetails(data)
+        .then((data) => {
+          if (data && data.orderInfoList) {
+            data.orderInfoList.forEach((el) => {
+              if (el.activatedFlag == 0) {
+                el.activatedFlag = '未激活';
+                el.lastUpdateTime = '';
+              } else if (el.activatedFlag == 1) {
+                el.activatedFlag = '已激活';
+                el.lastUpdateTime = _this.getCreatertime(el.lastUpdateTime);
+              }
+            });
+          }
+          _this.orderInfoList = data.orderInfoList;
+        });
     },
     reset() {
       if (!this.$route.query.id) {
@@ -439,20 +444,21 @@ export default {
       data.pageNo = this.pageNo;
       data.pageSize = this.pageSize;
       const _this = this;
-      this.requestReport.getSellersOrderData(data).then((data) => {
-        _this.loading = false;
-        if (data.isSuccess) {
-          _this.orderListLoading = true;
-          if (_this.input.flag == 1) {
-            window.location.href = data.data.showPath;
-          } else if (_this.input.flag == 0) {
-            _this.tableData = data.data.entities;
-            _this.pageNo = data.data.pageNo;
-            _this.pageSize = data.data.pageSize;
-            _this.total = data.data.entityCount;
+      this.requestReport.getSellersOrderData(data)
+        .then((data) => {
+          _this.loading = false;
+          if (data.isSuccess) {
+            _this.orderListLoading = true;
+            if (_this.input.flag == 1) {
+              window.location.href = data.data.showPath;
+            } else if (_this.input.flag == 0) {
+              _this.tableData = data.data.entities;
+              _this.pageNo = data.data.pageNo;
+              _this.pageSize = data.data.pageSize;
+              _this.total = data.data.entityCount;
+            }
           }
-        }
-      });
+        });
     },
     handleSizeChange(pageSize) {
       if (this.orderListLoading) {
@@ -474,13 +480,14 @@ export default {
       const params = {
         rightName: this.input.rightName
       };
-      this.requestReport.getRightsName(params).then((data) => {
-        if (data.data) {
-          cb(data.data);
-        } else {
-          cb([]);
-        }
-      });
+      this.requestReport.getRightsName(params)
+        .then((data) => {
+          if (data.data) {
+            cb(data.data);
+          } else {
+            cb([]);
+          }
+        });
     },
     rightsSelect(item) {
       this.rightsid = item.id;
@@ -501,14 +508,15 @@ export default {
         });
         this.shopdis = true;
       } else {
-        this.requestRights.listShopInfo(params).then((data) => {
-          _this.queryString = queryString || queryString == '' ? queryString : _this.queryString;
-          if (data) {
-            cb(data.entities);
-          } else {
-            cb([]);
-          }
-        });
+        this.requestRights.listShopInfo(params)
+          .then((data) => {
+            _this.queryString = queryString || queryString == '' ? queryString : _this.queryString;
+            if (data) {
+              cb(data.entities);
+            } else {
+              cb([]);
+            }
+          });
       }
     },
     giftList(queryString, cb) {
@@ -516,18 +524,19 @@ export default {
       const params = {
         id: this.rightsid
       };
-      this.requestReport.getGiftNameByRightsname(params).then((data) => {
-        if (data.isSuccess) {
-          if (data.data) {
-            cb(data.data);
+      this.requestReport.getGiftNameByRightsname(params)
+        .then((data) => {
+          if (data.isSuccess) {
+            if (data.data) {
+              cb(data.data);
+            } else {
+              cb([]);
+            }
           } else {
             cb([]);
+            _this.giftdisabled = true;
           }
-        } else {
-          cb([]);
-          _this.giftdisabled = true;
-        }
-      });
+        });
     },
     giftSelect(item) {
       this.input.giftId = item.giftId;
@@ -545,23 +554,25 @@ export default {
 };
 </script>
 <style scoped>
-.sellers .leftname {
-  white-space: nowrap;
-}
+  .sellers .leftname {
+    white-space: nowrap;
+  }
 </style>
 <style>
-.sellers .leftname {
-  width: 90px;
-  display: inline-block;
-}
-.sellers .el-loading-mask {
-  background-color: rgba(255, 255, 255, 0.9);
-  display: flex;
-  justify-content: center;
-}
-.el-autocomplete-suggestion li {
-  line-height: 25px;
-  padding: 5px 10px;
-  white-space: inherit;
-}
+  .sellers .leftname {
+    width: 90px;
+    display: inline-block;
+  }
+
+  .sellers .el-loading-mask {
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+  }
+
+  .el-autocomplete-suggestion li {
+    line-height: 25px;
+    padding: 5px 10px;
+    white-space: inherit;
+  }
 </style>

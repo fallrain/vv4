@@ -24,6 +24,7 @@
             type="datetimerange"
             placeholder="选择有效期范围"
             :picker-options="pickerOptions"
+            value-format="yyyy-MM-dd HH:mm:ss"
             @change="getTime"
           >
           </el-date-picker>
@@ -93,13 +94,11 @@ export default {
       return isJPG && isLt2M;
     },
     getTime(data) {
-      if (data) {
-        this.form.startTime = data.split(' - ')[0];
-        this.form.endTime = data.split(' - ')[1];
-      } else {
-        this.form.startTime = '';
-        this.form.endTime = '';
+      let range = data;
+      if (!range) {
+        range = ['', ''];
       }
+      [this.form.startTime, this.form.endTime] = range;
     },
     onSubmit() {
       const _this = this;

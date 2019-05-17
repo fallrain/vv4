@@ -47,6 +47,7 @@
           v-model="sstime"
           type="datetimerange"
           placeholder="选择认证时间范围"
+          value-format="yyyy-MM-dd HH:mm:ss"
           @change="gettime"
         >
         </el-date-picker>
@@ -184,13 +185,11 @@ export default {
       });
     },
     gettime(e) {
-      if (e) {
-        this.form.regProductStartTime = e.split(' - ')[0];
-        this.form.regProductEndTime = e.split(' - ')[1];
-      } else {
-        this.form.regProductStartTime = '';
-        this.form.regProductEndTime = '';
+      let range = e;
+      if (!range) {
+        range = ['', ''];
       }
+      [this.form.regProductStartTime, this.form.regProductEndTime] = range;
     },
     handleSizeChange(pageSize) {
       this.pageNo = 1;

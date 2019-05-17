@@ -13,7 +13,11 @@ module.exports = {
     'vue/require-prop-type-constructor': 0,
     'comma-dangle': 0,//末尾逗号
     'max-len': [1, 150],//最大行
-    'eqeqeq':1
+    'eqeqeq': 1,
+    'prefer-destructuring': ['warn', {
+      'object': true,
+      'array': false
+    }]//只对象推荐解构
   },
   parserOptions: {
     parser: 'babel-eslint',

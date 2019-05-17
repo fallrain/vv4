@@ -43,6 +43,7 @@
             v-model="setime"
             type="datetimerange"
             placeholder="选择时间范围"
+            value-format="yyyy-MM-dd HH:mm:ss"
             @change="setimeChange"
             style="width: 285px;"
           >
@@ -332,8 +333,11 @@ export default {
       this.listSearch();
     },
     setimeChange(e) {
-      this.appealDateStartTime = e.split(' - ')[0] || '';
-      this.appealDateEndTime = e.split(' - ')[1] || '';
+      let range = e;
+      if (!range) {
+        range = ['', ''];
+      }
+      [this.appealDateStartTime, this.appealDateEndTime] = range;
     },
     // 驳回
     rejected(id) {

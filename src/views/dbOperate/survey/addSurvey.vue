@@ -18,6 +18,7 @@
                 type="date"
                 placeholder="选择日期"
                 :picker-options="pickerOptions0"
+                value-format="yyyy-MM-dd HH:mm:ss"
                 @change="changeStartTime">
               </el-date-picker>
                &nbsp;&nbsp;————&nbsp;&nbsp;
@@ -27,6 +28,7 @@
                 type="date"
                 placeholder="选择日期"
                 :picker-options="pickerOptions0"
+                value-format="yyyy-MM-dd HH:mm:ss"
                 @change="changeEndTime">
               </el-date-picker>
               </div>

@@ -55,6 +55,7 @@
           v-model="sstime"
           type="datetimerange"
           placeholder="选择申诉时间范围"
+          value-format="yyyy-MM-dd HH:mm:ss"
           @change="gettime"
         >
         </el-date-picker>
@@ -478,13 +479,11 @@ export default {
       this.listSearch();
     },
     gettime(e) {
-      if (e) {
-        this.StartTime = e.split(' - ')[0];
-        this.EndTime = e.split(' - ')[1];
-      } else {
-        this.StartTime = '';
-        this.EndTime = '';
+      let range = e;
+      if (!range) {
+        range = ['', ''];
       }
+      [this.StartTime, this.EndTime] = range;
     },
     // 驳回
     rejected(id) {

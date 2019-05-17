@@ -131,6 +131,7 @@
         :picker-options="pickerOptions0"
         type="daterange"
         placeholder="选择有效期范围"
+        value-format="yyyy-MM-dd HH:mm:ss"
         @change="getTime"
       >
       </el-date-picker>
@@ -630,13 +631,11 @@ export default {
     },
     probabilitychange(e) {},
     getTime(data) {
-      if (data) {
-        this.data.startTime = data.split(' - ')[0];
-        this.data.endTime = data.split(' - ')[1];
-      } else {
-        this.data.startTime = '';
-        this.data.endTime = '';
+      let range = data;
+      if (!range) {
+        range = ['', ''];
       }
+      [this.data.startTime, this.data.endTime] = range;
     },
     dayradiochange(e) {
       if (e == 2) {

@@ -5,7 +5,15 @@
       <div class="clear"></div>
     </div>
     <div>
-      <el-date-picker v-model="value3" type="datetimerange" placeholder="选择时间范围" value-format="yyyy-MM-dd HH:mm:ss" @change="getTime">
+      <el-date-picker
+        v-model="value3"
+        type="datetimerange"
+        placeholder="选择时间范围"
+        value-format="yyyy-MM-dd HH:mm:ss"
+        @change="getTime"
+        start-placeholder="开始时间"
+        end-placeholder="结束时间"
+      >
       </el-date-picker>
       <el-button type="primary" icon="search" @click="timequery">查询</el-button>
     </div>

@@ -23,6 +23,8 @@
             v-model="yxtime"
             type="datetimerange"
             placeholder="选择有效期范围"
+            start-placeholder="开始时间"
+            end-placeholder="结束时间"
             :picker-options="pickerOptions"
             value-format="yyyy-MM-dd HH:mm:ss"
             @change="getTime"

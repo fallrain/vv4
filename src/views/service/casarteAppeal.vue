@@ -55,6 +55,8 @@
           v-model="sstime"
           type="datetimerange"
           placeholder="选择申诉时间范围"
+          start-placeholder="开始时间"
+          end-placeholder="结束时间"
           value-format="yyyy-MM-dd HH:mm:ss"
           @change="gettime"
         >
